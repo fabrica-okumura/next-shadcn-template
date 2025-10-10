@@ -1,0 +1,160 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./variables.css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  
+  /* Shadcn/ui base variables */
+  --background: var(--white); /* アプリ全体のデフォルト背景色 */
+  --foreground: var(--body-text); /* 標準テキストカラー */
+  --card: var(--white); /* カードコンポーネントの背景色 */
+  --card-foreground: var(--body-text); /* カード内テキストの色 */
+  --popover: var(--white); /* ポップオーバーの背景色 */
+  --popover-foreground: var(--body-text); /* ポップオーバー内テキストの色 */
+  --primary: var(--theme); /* プライマリ要素の基調カラー */
+  --primary-foreground: var(--white); /* プライマリ要素上のテキスト色 */
+  --secondary: var(--primitive-neutral-200); /* セカンダリ要素の背景色 */
+  --secondary-foreground: var(--body-text); /* セカンダリ要素上のテキスト色 */
+  --muted: var(--usage-background); /* ミュート領域の背景色 */
+  --muted-foreground: var(--primitive-neutral-700); /* ミュート領域のテキスト色 */
+  --accent: var(--primitive-accent-500); /* アクセント領域の背景色 */
+  --accent-foreground: var(--white); /* アクセント領域上のテキスト色 */
+  --destructive: var(--usage-button-destructive); /* 破壊的アクションの背景色 */
+  --destructive-foreground: var(--white); /* 破壊的アクション上のテキスト色 */
+  --border: var(--usage-border); /* デフォルトのボーダーカラー */
+  --input: var(--usage-form-border); /* フォーム入力のボーダーカラー */
+  --ring: var(--usage-form-focus-border); /* フォーカスリングのカラー */
+  --radius: var(--usage-card); /* コンポーネントの角丸半径 */
+  --chart-1: var(--usage-calendar-01); /* チャート用カラーパレット1 */
+  --chart-2: var(--usage-calendar-02); /* チャート用カラーパレット2 */
+  --chart-3: var(--usage-calendar-03); /* チャート用カラーパレット3 */
+  --chart-4: var(--usage-calendar-04); /* チャート用カラーパレット4 */
+  --chart-5: var(--usage-calendar-05); /* チャート用カラーパレット5 */
+  --sidebar: var(--primitive-neutral-050); /* サイドバーの背景色 */
+  --sidebar-foreground: var(--body-text); /* サイドバー内のテキスト色 */
+  --sidebar-primary: var(--theme); /* サイドバー内のプライマリ色 */
+  --sidebar-primary-foreground: var(--white); /* サイドバーのプライマリ上テキスト色 */
+  --sidebar-accent: var(--primitive-neutral-100); /* サイドバー内アクセント背景色 */
+  --sidebar-accent-foreground: var(--body-text); /* サイドバーアクセント上テキスト色 */
+  --sidebar-border: var(--usage-border); /* サイドバーのボーダーカラー */
+  --sidebar-ring: var(--usage-form-focus-border); /* サイドバー要素のフォーカスリング色 */
+}
+
+@theme inline {
+  /* Colors - Design tokens mapping */
+  --color-background: var(--background); /* Tailwind変数として使用する背景色 */
+  --color-foreground: var(--foreground); /* Tailwind変数として使用する前景色 */
+  --color-card: var(--card); /* カード用背景のTailwindマップ */
+  --color-card-foreground: var(--card-foreground); /* カード内テキスト用Tailwindマップ */
+  --color-popover: var(--popover); /* ポップオーバー用背景のTailwindマップ */
+  --color-popover-foreground: var(--popover-foreground); /* ポップオーバー内テキスト用マップ */
+  --color-primary: var(--primary); /* プライマリ色のTailwindマップ */
+  --color-primary-foreground: var(--primary-foreground); /* プライマリ上のテキスト色マップ */
+  --color-secondary: var(--secondary); /* セカンダリ色のTailwindマップ */
+  --color-secondary-foreground: var(--secondary-foreground); /* セカンダリ上のテキスト色マップ */
+  --color-muted: var(--muted); /* ミュート背景のTailwindマップ */
+  --color-muted-foreground: var(--muted-foreground); /* ミュートテキスト色のマップ */
+  --color-accent: var(--accent); /* アクセント色のTailwindマップ */
+  --color-accent-foreground: var(--accent-foreground); /* アクセント上のテキスト色マップ */
+  --color-destructive: var(--destructive); /* 破壊的アクション色のTailwindマップ */
+  --color-destructive-foreground: var(--destructive-foreground); /* 破壊的アクション上のテキスト色マップ */
+  --color-border: var(--border); /* コンポーネント境界色のマップ */
+  --color-input: var(--input); /* 入力ボーダー色のTailwindマップ */
+  --color-ring: var(--ring); /* フォーカスリング色のTailwindマップ */
+  --color-chart-1: var(--chart-1); /* チャート配色1のTailwindマップ */
+  --color-chart-2: var(--chart-2); /* チャート配色2のTailwindマップ */
+  --color-chart-3: var(--chart-3); /* チャート配色3のTailwindマップ */
+  --color-chart-4: var(--chart-4); /* チャート配色4のTailwindマップ */
+  --color-chart-5: var(--chart-5); /* チャート配色5のTailwindマップ */
+  --color-sidebar: var(--sidebar); /* サイドバー背景のTailwindマップ */
+  --color-sidebar-foreground: var(--sidebar-foreground); /* サイドバーテキスト色のマップ */
+  --color-sidebar-primary: var(--sidebar-primary); /* サイドバープライマリ色のマップ */
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground); /* サイドバープライマリ上テキスト色マップ */
+  --color-sidebar-accent: var(--sidebar-accent); /* サイドバーアクセント色のマップ */
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground); /* サイドバーアクセント上テキスト色マップ */
+  --color-sidebar-border: var(--sidebar-border); /* サイドバー境界色のマップ */
+  --color-sidebar-ring: var(--sidebar-ring); /* サイドバーフォーカスリング色のマップ */
+  
+  /* Border radius */
+  --radius-xs: var(--primitive-radius-radius-2); /* rounded-xs 用角丸 */
+  --radius-sm: var(--primitive-radius-radius-4); /* rounded-sm 用角丸 */
+  --radius-md: var(--primitive-radius-radius-8); /* rounded-md 用角丸 */
+  --radius-lg: var(--primitive-radius-radius-12); /* rounded-lg 用角丸 */
+  --radius-xl: var(--primitive-radius-radius-16); /* rounded-xl 用角丸 */
+  --radius-2xl: var(--primitive-radius-radius-24); /* rounded-2xl 用角丸 */
+  --radius-3xl: var(--primitive-radius-radius-32); /* rounded-3xl 用角丸 */
+  --radius-4xl: var(--primitive-radius-radius-999); /* rounded-4xl 用角丸 */
+  --radius-full: var(--primitive-radius-radius-999); /* rounded-full 用角丸 */
+  
+  /* Spacing scale */
+  --spacing: var(--primitive-spacing-spacing-4); /* spacing base (1 = 0.4rem) */
+  --spacing-px: 1px; /* spacing px 用 */
+  --spacing-0: 0; /* spacing 0 用 */
+  --spacing-0\.5: calc(var(--spacing) / 2); /* spacing 0.5 用 */
+  --spacing-1: var(--spacing); /* spacing 1 用 */
+  --spacing-1\.5: calc(var(--spacing) * 1.5); /* spacing 1.5 用 */
+  --spacing-2: var(--primitive-spacing-spacing-8); /* spacing 2 用 */
+  --spacing-2\.5: calc(var(--primitive-spacing-spacing-8) * 1.25); /* spacing 2.5 用 */
+  --spacing-3: var(--primitive-spacing-spacing-12); /* spacing 3 用 */
+  --spacing-3\.5: calc(var(--primitive-spacing-spacing-12) * 1.1666666667); /* spacing 3.5 用 */
+  --spacing-4: var(--primitive-spacing-spacing-16); /* spacing 4 用 */
+  --spacing-5: var(--primitive-spacing-spacing-24); /* spacing 5 用 */
+  --spacing-6: var(--primitive-spacing-spacing-32); /* spacing 6 用 */
+  --spacing-7: calc(var(--primitive-spacing-spacing-32) * 1.25); /* spacing 7 用 */
+  --spacing-8: var(--primitive-spacing-spacing-40); /* spacing 8 用 */
+  --spacing-9: calc(var(--primitive-spacing-spacing-40) * 1.125); /* spacing 9 用 */
+  --spacing-10: var(--primitive-spacing-spacing-48); /* spacing 10 用 */
+  --spacing-11: calc(var(--primitive-spacing-spacing-48) * 1.125); /* spacing 11 用 */
+  --spacing-12: var(--primitive-spacing-spacing-56); /* spacing 12 用 */
+  --spacing-14: var(--primitive-spacing-spacing-64); /* spacing 14 用 */
+  --spacing-16: var(--primitive-spacing-spacing-72); /* spacing 16 用 */
+  --spacing-20: var(--primitive-spacing-spacing-96); /* spacing 20 用 */
+  --spacing-24: var(--primitive-spacing-spacing-120); /* spacing 24 用 */
+  --spacing-28: calc(var(--primitive-spacing-spacing-120) * 1.1666666667); /* spacing 28 用 */
+  --spacing-32: calc(var(--spacing-24) + var(--spacing-8)); /* spacing 32 用 */
+  --spacing-36: calc(var(--spacing-32) + var(--spacing-4)); /* spacing 36 用 */
+  --spacing-40: var(--usage-contents-column-gap); /* spacing 40 用 */
+  --spacing-44: calc(var(--spacing-40) + var(--spacing-4)); /* spacing 44 用 */
+  --spacing-48: calc(var(--spacing-32) + var(--spacing-16)); /* spacing 48 用 */
+  --spacing-52: calc(var(--spacing-48) + var(--spacing-4)); /* spacing 52 用 */
+  --spacing-56: var(--usage-section-padding); /* spacing 56 用 */
+  --spacing-60: calc(var(--spacing-56) + var(--spacing-4)); /* spacing 60 用 */
+  --spacing-64: var(--usage-table-column-gap); /* spacing 64 用 */
+  --spacing-72: calc(var(--spacing-64) + var(--spacing-8)); /* spacing 72 用 */
+  --spacing-80: calc(var(--spacing-64) + var(--spacing-16)); /* spacing 80 用 */
+  --spacing-96: var(--usage-contents-row-gap-nodivider); /* spacing 96 用 */
+
+  /* Font sizes - Design tokens override */
+  --text-xs: var(--font-size-usage-caption); /* 1.2rem */
+  --text-sm: var(--font-size-usage-parts-sm); /* 1.2rem */
+  --text-base: var(--font-size-usage-default); /* 1.4rem */
+  --text-lg: var(--font-size-usage-parts-md); /* 1.4rem */
+  --text-xl: var(--font-size-usage-parts-lg); /* 1.6rem */
+  --text-2xl: var(--font-size-usage-title-sm); /* 1.6rem */
+  --text-3xl: var(--font-size-usage-title-md); /* 2rem */
+  --text-4xl: var(--font-size-usage-title-lg); /* 2.4rem */
+  --text-5xl: var(--font-size-usage-pagetitle); /* 2.8rem */
+}
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-size: var(--font-size-usage-default);
+    color: var(--body-text);
+    background-color: var(--white);
+  }
+
+  button,
+  input[type='checkbox'],
+  input[type='radio'],
+  select {
+    cursor: pointer;
+  }
+}
