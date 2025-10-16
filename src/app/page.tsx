@@ -14,6 +14,7 @@ import { ConditionsListPage } from "@/components/conditions-list-page"
 import { ProcurementList } from "@/components/procurement-list"
 import { VehicleDetail } from "@/components/vehicle-detail"
 import { VehicleDetailNormal } from "@/components/vehicle-detail-normal"
+import { Button } from "@/components/ui/button"
 
 export default function HomePage() {
   const [negotiationMode, setNegotiationMode] = useState(false)
@@ -140,6 +141,107 @@ export default function HomePage() {
             />
 
             <div className="space-y-8">
+              <section className="rounded-lg border border-border bg-card p-6 shadow-sm space-y-4">
+                  <h2 className="text-lg font-bold">Button バリエーション確認</h2>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold">primary</p>
+                      <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="primary" size="md">
+                            primary / md
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: md</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="primary" size="sm">
+                            primary / sm
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: sm</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="primary" size="icon" aria-label="primary icon ボタン">
+                            <span className="font-bold">●</span>
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: icon</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold">accent</p>
+                      <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="accent" size="md">
+                            accent / md
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: md</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="accent" size="sm">
+                            accent / sm
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: sm</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="accent" size="icon" aria-label="accent icon ボタン">
+                            <span className="font-bold">●</span>
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: icon</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold">neutral</p>
+                      <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="neutral" size="md">
+                            neutral / md
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: md</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="neutral" size="sm">
+                            neutral / sm
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: sm</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="neutral" size="icon" aria-label="neutral icon ボタン">
+                            <span className="font-bold">●</span>
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: icon</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold">danger</p>
+                      <div className="flex flex-wrap items-center gap-4">
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="danger" size="md">
+                            danger / md
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: md</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="danger" size="sm">
+                            danger / sm
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: sm</span>
+                        </div>
+                        <div className="flex min-w-[180px] items-center gap-3">
+                          <Button variant="danger" size="icon" aria-label="danger icon ボタン">
+                            <span className="font-bold">●</span>
+                          </Button>
+                          <span className="text-xs text-muted-foreground">size: icon</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
               <FavoriteVehicles
                 negotiationMode={negotiationMode}
                 onShowList={() => setShowFavoritesList(true)}

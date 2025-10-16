@@ -2,7 +2,8 @@
   "root": true,
   "extends": [
     "next/core-web-vitals",
-    "next/typescript"
+    "next/typescript",
+    "plugin:storybook/recommended"
   ],
   "ignorePatterns": [
     "node_modules/",

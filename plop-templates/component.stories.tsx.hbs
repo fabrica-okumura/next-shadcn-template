@@ -1,0 +1,40 @@
+import type { Meta, StoryObj } from "@storybook/nextjs"
+import { {{properCase name}} } from "./{{kebabCase name}}"
+
+const meta = {
+  component: {{properCase name}},
+  title: "{{storyTitle}}",
+  tags: ["autodocs"],
+  {{#if (hasItems controls)}}
+  argTypes: {
+    {{#each controls}}
+    {{this.name}}: {
+      control: "{{this.control}}",
+      options: {{{arrayLiteral this.options}}},
+    },
+    {{/each}}
+  },
+  {{/if}}
+  {{#if (hasItems defaultArgs)}}
+  args: {
+    {{#each defaultArgs}}
+    {{this.key}}: {{#if this.isString}}"{{this.value}}"{{else}}{{this.value}}{{/if}},
+    {{/each}}
+  },
+  {{/if}}
+} satisfies Meta<typeof {{properCase name}}>
+
+export default meta
+
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {
+  {{#if (hasItems defaultArgs)}}
+  args: {
+    {{#each defaultArgs}}
+    {{this.key}}: {{#if this.isString}}"{{this.value}}"{{else}}{{this.value}}{{/if}},
+    {{/each}}
+  },
+  {{/if}}
+}
+

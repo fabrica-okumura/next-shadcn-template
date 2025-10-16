@@ -47,7 +47,7 @@ export function FeaturedInventory() {
         icon={<Star className="h-5 w-5 text-primary" />}
         title="本日の注目在庫"
         action={
-          <Button variant="outline" size="sm">
+          <Button variant="neutral" size="sm">
             <TrendingUp className="mr-1 h-4 w-4" />
             もっと見る
           </Button>
@@ -99,7 +99,7 @@ export function FeaturedInventory() {
             }
             footer={
               <div className="flex space-x-2 pt-2">
-                <Button variant="outline" size="sm" className="flex-1 bg-transparent">
+                <Button variant="neutral" size="sm" className="flex-1 bg-transparent">
                   <Eye className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>

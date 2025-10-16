@@ -42,7 +42,7 @@ export function Header({
                 className="text-5xl font-semibold cursor-pointer hover:opacity-80 transition-opacity"
                 onClick={onNavigateHome}
               >
-                ロゴ
+                ロゴあああ
               </span>
               <div className="flex items-center space-x-2">
                 <span className="text-muted-foreground">商談モード</span>
@@ -55,28 +55,28 @@ export function Header({
             </div>
 
             <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={onShowConditions}>
+              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowConditions}>
                 <ListFilter className="w-4 h-4" />
                 <span className="ml-2">検索条件</span>
               </Button>
-              <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={onShowSearchHistory}>
+              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowSearchHistory}>
                 <History className="w-4 h-4" />
                 <span className="ml-2">検索履歴</span>
               </Button>
-              <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={onShowFavorites}>
+              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowFavorites}>
                 <Heart className="w-4 h-4" />
                 <span className="ml-2">お気に入り</span>
               </Button>
-              <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={onShowProcurement}>
+              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowProcurement}>
                 <Car className="w-4 h-4" />
                 <span className="ml-2">仕入れ車両</span>
               </Button>
-              <Button variant="ghost" size="sm" className="text-muted-foreground" onClick={onShowMyPage}>
+              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowMyPage}>
                 <User className="w-4 h-4" />
                 <span className="ml-2">マイページ</span>
               </Button>
               <Button
-                variant="ghost"
+                variant="neutral"
                 size="icon"
                 className="text-muted-foreground"
                 onClick={() => setNotificationsOpen(true)}
@@ -84,7 +84,7 @@ export function Header({
                 <Bell className="w-4 h-4" />
               </Button>
               <Button
-                variant="ghost"
+                variant="neutral"
                 size="icon"
                 className="text-muted-foreground"
                 onClick={() => setSettingsOpen(true)}

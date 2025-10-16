@@ -16,12 +16,22 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
 
   return (
     <div className="bg-card border-2 border-border rounded-lg p-6 relative mt-6">
+                  <Select>
+              <SelectTrigger className="" size="sm">
+                <SelectValue placeholder="選択" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="toyota">トヨタ</SelectItem>
+                <SelectItem value="honda">ホンダ</SelectItem>
+                <SelectItem value="nissan">日産</SelectItem>
+              </SelectContent>
+            </Select>
       <div className="space-y-4">
         <div className="grid grid-cols-12 gap-3">
           <div className="col-span-2">
             <label className="text-sm text-muted-foreground mb-2 block">メーカー</label>
             <Select>
-              <SelectTrigger className="px-2 py-1 text-left justify-start w-full [&>span]:w-full bg-white">
+              <SelectTrigger className="" size="sm">
                 <SelectValue placeholder="選択" />
               </SelectTrigger>
               <SelectContent>
@@ -35,7 +45,7 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
           <div className="col-span-2">
             <label className="text-sm text-muted-foreground mb-2 block">車名</label>
             <Select>
-              <SelectTrigger className="px-2 py-1 text-left justify-start w-full [&>span]:w-full bg-white">
+              <SelectTrigger className="w-full" size="sm">
                 <SelectValue placeholder="選択" />
               </SelectTrigger>
               <SelectContent>
@@ -48,9 +58,9 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
           <div className="col-span-2">
             <label className="text-sm text-muted-foreground mb-2 block">年式</label>
             <div className="flex space-x-1">
-              <Input placeholder="2020" className="w-full text-xs bg-white" />
+              <Input placeholder="2020" className="" />
               <span className="text-muted-foreground self-center text-xs">〜</span>
-              <Input placeholder="2024" className="w-full text-xs bg-white" />
+              <Input placeholder="2024" className="" />
             </div>
           </div>
 
@@ -75,7 +85,7 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
           <div className="col-span-2">
             <label className="text-sm text-muted-foreground mb-2 block">修復歴</label>
             <Select>
-              <SelectTrigger className="px-2 py-1 text-left justify-start w-full [&>span]:w-full bg-white">
+              <SelectTrigger className="w-full">
                 <SelectValue placeholder="全て" />
               </SelectTrigger>
               <SelectContent>
@@ -151,7 +161,7 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
           <div className="border-t border-border mt-4 pt-4">
             <div className="flex justify-between items-center">
               <div className="flex justify-center space-x-3 flex-1">
-                <Button variant="outline" className="min-w-[120px] h-10 bg-transparent">
+                <Button variant="neutral" className="min-w-[120px] h-10 bg-transparent">
                   クリア
                 </Button>
                 <Button onClick={onSearch} className="bg-primary hover:bg-primary/90 min-w-[120px] h-10">
@@ -162,7 +172,7 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
               <div className="relative">
                 <CollapsibleTrigger asChild>
                   <Button
-                    variant="outline"
+                    variant="neutral"
                     size="sm"
                     className="flex items-center gap-2 bg-transparent min-w-[120px] h-10"
                   >

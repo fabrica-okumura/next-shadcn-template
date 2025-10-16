@@ -16,7 +16,7 @@ export function ScreenFlowDiagram({ open, onOpenChange }: ScreenFlowDiagramProps
         <DialogHeader className="p-6 pb-4 border-b">
           <div className="flex items-center justify-between">
             <DialogTitle className="text-xl font-bold">画面遷移図</DialogTitle>
-            <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
+            <Button variant="neutral" size="icon" onClick={() => onOpenChange(false)}>
               <X className="w-5 h-5" />
             </Button>
           </div>

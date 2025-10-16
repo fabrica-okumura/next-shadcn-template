@@ -221,29 +221,29 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
       {/* Header Navigation */}
       <div className="flex items-center justify-between mb-6 mt-6">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={onBack} className="bg-transparent">
+          <Button variant="neutral" size="sm" onClick={onBack} className="bg-transparent">
             <ArrowLeft className="w-4 h-4 mr-2" />
             一覧へ戻る
           </Button>
           {onPrevious && (
-            <Button variant="outline" size="sm" onClick={onPrevious} className="bg-transparent">
+            <Button variant="neutral" size="sm" onClick={onPrevious} className="bg-transparent">
               <ChevronLeft className="w-4 h-4 mr-2" />
               前の車両
             </Button>
           )}
           {onNext && (
-            <Button variant="outline" size="sm" onClick={onNext} className="bg-transparent">
+            <Button variant="neutral" size="sm" onClick={onNext} className="bg-transparent">
               次の車両
               <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
           )}
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => setIsFavorite(!isFavorite)} className="bg-transparent">
+          <Button variant="neutral" size="sm" onClick={() => setIsFavorite(!isFavorite)} className="bg-transparent">
             <Heart className={`w-4 h-4 mr-2 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
             お気に入り
           </Button>
-          <Button variant="outline" size="sm" className="bg-transparent">
+          <Button variant="neutral" size="sm" className="bg-transparent">
             <Printer className="w-4 h-4 mr-2" />
             印刷
           </Button>
@@ -515,7 +515,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                 </>
               )}
               <Button
-                variant="outline"
+                variant="neutral"
                 size="sm"
                 onClick={() => setShowAllEquipment(!showAllEquipment)}
                 className="w-full bg-transparent"
@@ -702,7 +702,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                   />
                 </div>
                 <Button
-                  variant="outline"
+                  variant="neutral"
                   size="sm"
                   className="w-full mt-2 bg-transparent"
                   onClick={() => setShowInspectionModal(true)}
@@ -713,7 +713,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               </div>
               {!showDetailedInfo && (
                 <Button
-                  variant="outline"
+                  variant="neutral"
                   size="sm"
                   onClick={() => setShowDetailedInfo(true)}
                   className="w-full bg-transparent"
@@ -730,7 +730,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                     <div className="text-xs text-muted-foreground mt-2">更新日時: {vehicle.ratingUpdated}</div>
                   </div>
                   <Button
-                    variant="outline"
+                    variant="neutral"
                     size="sm"
                     onClick={() => setShowDetailedInfo(false)}
                     className="w-full bg-transparent"
@@ -774,7 +774,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                   </button>
                 ))}
               </div>
-              <Button variant="outline" className="w-full bg-transparent">
+              <Button variant="neutral" className="w-full bg-transparent">
                 すべての写真を見る（{vehicle.images.length}枚）
               </Button>
               <p className="text-xs text-muted-foreground text-center">
@@ -790,8 +790,8 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
 
       <div className="space-y-6">
         <Button
-          variant="outline"
-          size="lg"
+          variant="neutral"
+          size="md"
           onClick={() => setShowAdditionalInfo(!showAdditionalInfo)}
           className="w-full bg-transparent"
         >
@@ -950,11 +950,11 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" className="bg-transparent">
+              <Button variant="neutral" className="bg-transparent">
                 値下げ交渉
               </Button>
-              <Button size="lg">商談申込み・在庫確認</Button>
-              <Button variant="outline" size="sm" className="bg-transparent">
+              <Button>商談申込み・在庫確認</Button>
+              <Button variant="neutral" size="sm" className="bg-transparent">
                 <FileText className="w-4 h-4 mr-2" />
                 規約
               </Button>
@@ -963,11 +963,11 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
           <div className="mt-4 pt-4 border-t">
             <h4 className="text-sm font-semibold mb-3">通知設定</h4>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="bg-transparent">
+              <Button variant="neutral" size="sm" className="bg-transparent">
                 <Bell className="w-4 h-4 mr-2" />
                 この車の更新を通知
               </Button>
-              <Button variant="outline" size="sm" className="bg-transparent" onClick={handleOpenNotificationModal}>
+              <Button variant="neutral" size="sm" className="bg-transparent" onClick={handleOpenNotificationModal}>
                 <Bell className="w-4 h-4 mr-2" />
                 この条件の新着を通知
               </Button>
@@ -1201,7 +1201,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
           </div>
 
           <DialogFooter>
-            <Button variant="outline" onClick={() => setShowNotificationModal(false)}>
+            <Button variant="neutral" onClick={() => setShowNotificationModal(false)}>
               キャンセル
             </Button>
             <Button onClick={handleSaveNotification}>通知設定を保存</Button>

@@ -303,7 +303,7 @@ export function VehicleSearchResults({
           {negotiationMode && (
             <div className="flex gap-1 border rounded-lg p-1">
               <Button
-                variant={viewMode === "card" ? "default" : "ghost"}
+                variant="neutral"
                 size="sm"
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("card")}
@@ -311,7 +311,7 @@ export function VehicleSearchResults({
                 <LayoutGrid className="w-4 h-4" />
               </Button>
               <Button
-                variant={viewMode === "table" ? "default" : "ghost"}
+                variant="neutral"
                 size="sm"
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("table")}
@@ -320,12 +320,7 @@ export function VehicleSearchResults({
               </Button>
             </div>
           )}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={handleSaveCondition}
-            className="min-w-[120px] h-10 bg-transparent"
-          >
+          <Button size="sm" onClick={handleSaveCondition} className="min-w-[120px] h-10">
             検索条件を保存
           </Button>
         </div>
@@ -350,9 +345,8 @@ export function VehicleSearchResults({
                 検索条件を保存して通知を受け取る
               </Button>
               <Button
-                variant="outline"
                 size="lg"
-                className="flex-1 bg-transparent"
+                className="flex-1"
                 onClick={() => {
                   // Reset search or modify conditions
                   console.log("Modify search conditions")
@@ -549,20 +543,20 @@ export function VehicleSearchResults({
           </span>
           <div className="flex gap-1">
             <Button
-              variant="outline"
+              variant="neutral"
               size="sm"
               onClick={handlePreviousPage}
               disabled={currentPage === 1}
-              className="h-8 w-8 p-0 bg-transparent"
+              className="h-8 w-8 p-0"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
             <Button
-              variant="outline"
+              variant="neutral"
               size="sm"
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="h-8 w-8 p-0 bg-transparent"
+              className="h-8 w-8 p-0"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -572,10 +566,10 @@ export function VehicleSearchResults({
 
       <div className="fixed bottom-6 right-6 z-50">
         <Button
-          variant="outline"
+          variant="neutral"
           size="sm"
           onClick={() => setShowZeroResults(!showZeroResults)}
-          className="shadow-lg bg-background border-2"
+          className="shadow-lg"
         >
           {showZeroResults ? "結果を表示" : "0件表示"}
         </Button>

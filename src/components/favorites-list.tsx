@@ -314,9 +314,9 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                   </div>
                   <div className="flex gap-2">
                     <Button
-                      variant="outline"
+                      variant="neutral"
                       size="sm"
-                      className="h-10 min-w-[120px] bg-white"
+                      className="h-10 min-w-[120px]"
                       onClick={() => onVehicleClick?.(vehicle.listingNumber)}
                     >
                       <Eye className="mr-1 h-4 w-4" />
@@ -340,7 +340,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                     <div>評価: {vehicle.dealer.rating}点 ({vehicle.dealer.reviewCount}件)</div>
                     <div className="font-semibold text-foreground">{vehicle.dealer.phone}</div>
                   </div>
-                  <Button variant="outline" size="sm" className="w-full text-xs bg-transparent">
+                  <Button variant="neutral" size="sm" className="w-full text-xs bg-transparent">
                     来店予約
                   </Button>
                 </div>

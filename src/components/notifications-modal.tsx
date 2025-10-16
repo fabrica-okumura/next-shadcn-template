@@ -78,7 +78,7 @@ export function NotificationsModal({ open, onOpenChange }: NotificationsModalPro
           ))}
         </div>
         <div className="flex justify-end pt-4 border-t border-border">
-          <Button variant="outline" onClick={() => onOpenChange(false)}>
+          <Button variant="neutral" onClick={() => onOpenChange(false)}>
             閉じる
           </Button>
         </div>

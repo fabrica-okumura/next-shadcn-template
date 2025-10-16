@@ -250,10 +250,10 @@ export function CustomersList({ onNegotiationClick }: { onNegotiationClick?: (ne
               </div>
 
               <div className="flex gap-2">
-                <Button variant="outline" size="sm">
+                <Button variant="neutral" size="sm">
                   詳細
                 </Button>
-                <Button variant="outline" size="sm">
+                <Button variant="neutral" size="sm">
                   編集
                 </Button>
               </div>

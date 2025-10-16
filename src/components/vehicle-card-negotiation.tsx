@@ -289,7 +289,7 @@ export function VehicleCardNegotiation({
             <div className="text-right">
               <div className="text-xs text-muted-foreground mb-1">お問合せ（無料電話）</div>
               <div className="text-xl font-bold">{vehicle.dealer.phone}</div>
-              <Button variant="outline" size="sm" className="mt-2 text-xs bg-transparent">
+              <Button variant="neutral" size="sm" className="mt-2 text-xs bg-transparent">
                 来店予約
               </Button>
             </div>

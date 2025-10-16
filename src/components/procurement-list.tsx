@@ -285,13 +285,13 @@ export function ProcurementList() {
                 )}
 
                 <div className="flex gap-2 mt-4">
-                  <Button variant="outline" size="sm">
+                  <Button variant="neutral" size="sm">
                     詳細
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button variant="neutral" size="sm">
                     ステータス更新
                   </Button>
-                  <Button variant="outline" size="sm">
+                  <Button variant="neutral" size="sm">
                     書類管理
                   </Button>
                 </div>

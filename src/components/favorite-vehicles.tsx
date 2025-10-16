@@ -137,7 +137,7 @@ export function FavoriteVehicles({ negotiationMode, onShowList, onVehicleClick }
         icon={<Heart className="h-5 w-5 text-primary" />}
         title="お気に入り車両"
         action={
-          <Button variant="outline" size="sm" className="h-10 min-w-[120px] bg-transparent" onClick={onShowList}>
+          <Button variant="neutral" size="sm" className="h-10 min-w-[120px] bg-transparent" onClick={onShowList}>
             <List className="mr-2 h-4 w-4" />
             詳しく見る
           </Button>
