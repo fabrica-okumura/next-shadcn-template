@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FilterChips } from "@/components/shared/filter-chips"
 import { SearchInput } from "@/components/shared/search-input"
-import { Calendar, MapPin, Truck, FileCheck, Clock, CheckCircle2, CircleCheck } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -188,15 +188,15 @@ export function ProcurementList() {
   const getStatusIcon = (status: ProcurementStatus) => {
     switch (status) {
       case "連絡待ち":
-        return <Clock className="w-4 h-4" />
+        return <Icons.Clock className="w-4 h-4" />
       case "審査中":
-        return <FileCheck className="w-4 h-4" />
+        return <Icons.Document className="w-4 h-4" />
       case "落札手続き":
-        return <CheckCircle2 className="w-4 h-4" />
+        return <Icons.CheckmarkCircle className="w-4 h-4" />
       case "陸送手配／輸送中":
-        return <Truck className="w-4 h-4" />
+        return <Icons.Car className="w-4 h-4" />
       case "完了":
-        return <CircleCheck className="w-4 h-4" />
+        return <Icons.CheckmarkCircle className="w-4 h-4" />
     }
   }
 
@@ -252,26 +252,26 @@ export function ProcurementList() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-4">
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Building2 className="w-4 h-4" />
+                    <Icons.Home className="w-4 h-4" />
                     <span>{vehicle.auctionHouse}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Calendar className="w-4 h-4" />
+                    <Icons.Calendar className="w-4 h-4" />
                     <span>オークション日: {vehicle.auctionDate}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin className="w-4 h-4" />
+                    <Icons.Pickup className="w-4 h-4" />
                     <span>{vehicle.location}</span>
                   </div>
                   {vehicle.estimatedArrival && (
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Truck className="w-4 h-4" />
+                      <Icons.Car className="w-4 h-4" />
                       <span>到着予定: {vehicle.estimatedArrival}</span>
                     </div>
                   )}
                   {vehicle.completedDate && (
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <CircleCheck className="w-4 h-4" />
+                      <Icons.CheckmarkCircle className="w-4 h-4" />
                       <span>完了日: {vehicle.completedDate}</span>
                     </div>
                   )}
@@ -285,13 +285,13 @@ export function ProcurementList() {
                 )}
 
                 <div className="flex gap-2 mt-4">
-                  <Button variant="neutral" size="sm">
+                  <Button variant="primary" size="sm">
                     詳細
                   </Button>
-                  <Button variant="neutral" size="sm">
+                  <Button variant="primary" size="sm">
                     ステータス更新
                   </Button>
-                  <Button variant="neutral" size="sm">
+                  <Button variant="primary" size="sm">
                     書類管理
                   </Button>
                 </div>
@@ -310,27 +310,3 @@ export function ProcurementList() {
   )
 }
 
-function Building2(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-      <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-      <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-      <path d="M10 6h4" />
-      <path d="M10 10h4" />
-      <path d="M10 14h4" />
-      <path d="M10 18h4" />
-    </svg>
-  )
-}

@@ -1,6 +1,6 @@
 "use client"
 
-import { Bell, Heart, Settings, ListFilter, Car, History, User } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { NotificationsModal } from "@/components/notifications-modal"
@@ -55,41 +55,41 @@ export function Header({
             </div>
 
             <div className="flex items-center space-x-4">
-              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowConditions}>
-                <ListFilter className="w-4 h-4" />
+              <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowConditions}>
+                <Icons.List className="w-4 h-4" />
                 <span className="ml-2">検索条件</span>
               </Button>
-              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowSearchHistory}>
-                <History className="w-4 h-4" />
+              <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowSearchHistory}>
+                <Icons.Clock className="w-4 h-4" />
                 <span className="ml-2">検索履歴</span>
               </Button>
-              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowFavorites}>
-                <Heart className="w-4 h-4" />
+              <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowFavorites}>
+                <Icons.Star className="w-4 h-4" />
                 <span className="ml-2">お気に入り</span>
               </Button>
-              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowProcurement}>
-                <Car className="w-4 h-4" />
+              <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowProcurement}>
+                <Icons.Car className="w-4 h-4" />
                 <span className="ml-2">仕入れ車両</span>
               </Button>
-              <Button variant="neutral" size="sm" className="text-muted-foreground" onClick={onShowMyPage}>
-                <User className="w-4 h-4" />
+              <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowMyPage}>
+                <Icons.AccountPlus className="w-4 h-4" />
                 <span className="ml-2">マイページ</span>
               </Button>
               <Button
-                variant="neutral"
+                variant="primary"
                 size="icon"
                 className="text-muted-foreground"
                 onClick={() => setNotificationsOpen(true)}
               >
-                <Bell className="w-4 h-4" />
+                <Icons.Star className="w-4 h-4" />
               </Button>
               <Button
-                variant="neutral"
+                variant="primary"
                 size="icon"
                 className="text-muted-foreground"
                 onClick={() => setSettingsOpen(true)}
               >
-                <Settings className="w-4 h-4" />
+                <Icons.Settings className="w-4 h-4" />
               </Button>
             </div>
           </div>

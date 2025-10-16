@@ -1,7 +1,7 @@
 "use client"
 
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { User, Mail, Phone, Building, LogOut } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 
@@ -31,7 +31,7 @@ export function SettingsModal({ open, onOpenChange, language, setLanguage }: Set
             <div className="bg-accent/50 rounded-lg p-4 space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <User className="w-6 h-6 text-primary" />
+                  <Icons.AccountPlus className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium text-foreground">田中 太郎</p>
@@ -41,15 +41,15 @@ export function SettingsModal({ open, onOpenChange, language, setLanguage }: Set
               <Separator />
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm">
-                  <Mail className="w-4 h-4 text-muted-foreground" />
+                  <Icons.Mail className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground">tanaka@example.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Phone className="w-4 h-4 text-muted-foreground" />
+                  <Icons.Mail className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground">090-1234-5678</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Building className="w-4 h-4 text-muted-foreground" />
+                  <Icons.Home className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground">株式会社サンプル</span>
                 </div>
               </div>
@@ -86,8 +86,8 @@ export function SettingsModal({ open, onOpenChange, language, setLanguage }: Set
 
           <Separator />
 
-          <Button onClick={handleLogout} variant="destructive" className="w-full">
-            <LogOut className="w-4 h-4 mr-2" />
+          <Button onClick={handleLogout} variant="danger" className="w-full">
+                <Icons.Logout className="w-4 h-4 mr-2" />
             ログアウト
           </Button>
         </div>

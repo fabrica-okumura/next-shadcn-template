@@ -17,32 +17,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  ChevronLeft,
-  ChevronRight,
-  ArrowLeft,
-  Heart,
-  Printer,
-  Star,
-  MapPin,
-  Calendar,
-  Gauge,
-  Fuel,
-  Palette,
-  Settings,
-  Users,
-  DoorClosed,
-  FileText,
-  TrendingUp,
-  Clock,
-  Truck,
-  Share2,
-  Bell,
-  CheckCircle2,
-  AlertCircle,
-  Package,
-  ZoomIn,
-} from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import Image from 'next/image'
 
 interface VehicleDetailProps {
@@ -197,11 +172,11 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
     imageCategory === "all" ? vehicle.images : vehicle.images.filter((img) => img.category === imageCategory)
 
   const statusConfig = {
-    連絡待ち: { color: "bg-blue-500", icon: Bell },
-    審査中: { color: "bg-yellow-500", icon: AlertCircle },
-    落札手続き: { color: "bg-orange-500", icon: FileText },
-    "陸送手配／輸送中": { color: "bg-purple-500", icon: Truck },
-    入庫完了: { color: "bg-green-500", icon: CheckCircle2 },
+    連絡待ち: { color: "bg-blue-500", icon: Icons.Star },
+    審査中: { color: "bg-yellow-500", icon: Icons.Caution },
+    落札手続き: { color: "bg-orange-500", icon: Icons.Document },
+    "陸送手配／輸送中": { color: "bg-purple-500", icon: Icons.Car },
+    入庫完了: { color: "bg-green-500", icon: Icons.CheckmarkCircle },
   }
 
   const currentStatus = statusConfig[vehicle.status as keyof typeof statusConfig]
@@ -214,30 +189,30 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
       {/* Header Navigation */}
       <div className="flex items-center justify-between mb-6 mt-6">
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={onBack} className="bg-transparent">
-            <ArrowLeft className="w-4 h-4 mr-2" />
+          <Button variant="primary" size="sm" onClick={onBack} className="bg-transparent">
+            <Icons.ArrowLeft className="w-4 h-4 mr-2" />
             一覧へ戻る
           </Button>
           {onPrevious && (
-            <Button variant="outline" size="sm" onClick={onPrevious} className="bg-transparent">
-              <ChevronLeft className="w-4 h-4 mr-2" />
+            <Button variant="primary" size="sm" onClick={onPrevious} className="bg-transparent">
+              <Icons.ArrowLeft className="w-4 h-4 mr-2" />
               前の車両
             </Button>
           )}
           {onNext && (
-            <Button variant="outline" size="sm" onClick={onNext} className="bg-transparent">
+            <Button variant="primary" size="sm" onClick={onNext} className="bg-transparent">
               次の車両
-              <ChevronRight className="w-4 h-4 ml-2" />
+              <Icons.ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           )}
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => setIsFavorite(!isFavorite)} className="bg-transparent">
-            <Heart className={`w-4 h-4 mr-2 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
+          <Button variant="primary" size="sm" onClick={() => setIsFavorite(!isFavorite)} className="bg-transparent">
+            <Icons.Star className={`w-4 h-4 mr-2 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
             お気に入り
           </Button>
-          <Button variant="outline" size="sm" className="bg-transparent">
-            <Printer className="w-4 h-4 mr-2" />
+          <Button variant="primary" size="sm" className="bg-transparent">
+            <Icons.Print className="w-4 h-4 mr-2" />
             印刷
           </Button>
         </div>
@@ -251,18 +226,18 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <h1 className="text-2xl font-bold">
                 {vehicle.maker} {vehicle.model} {vehicle.grade}
               </h1>
-              <Badge variant="outline" className={`${currentStatus.color} text-white border-0`}>
+              <Badge variant="default" className={`${currentStatus.color} text-white border-0`}>
                 <StatusIcon className="w-3 h-3 mr-1" />
                 {vehicle.status}
               </Badge>
             </div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
+                <Icons.Calendar className="w-4 h-4" />
                 {vehicle.year}年式
               </span>
               <span className="flex items-center gap-1">
-                <MapPin className="w-4 h-4" />
+                <Icons.Pickup className="w-4 h-4" />
                 {vehicle.location}
               </span>
               <span>出品番号: {vehicle.listingNumber}</span>
@@ -272,7 +247,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <div className="flex items-center gap-2">
                 <div className="flex items-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star
+                    <Icons.Star
                       key={i}
                       className={`w-4 h-4 ${
                         i < Math.floor(vehicle.overallRating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
@@ -330,17 +305,17 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                   className="rounded-lg object-cover w-full h-full"
                 />
                 <Button
-                  variant="secondary"
+                  variant="primary"
                   size="sm"
                   className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  <ZoomIn className="w-4 h-4 mr-2" />
+                  <Icons.Fullscreen className="w-4 h-4 mr-2" />
                   拡大
                 </Button>
               </div>
               <div className="flex items-center gap-2 mb-4">
                 <Button
-                  variant={imageCategory === "all" ? "default" : "outline"}
+                  variant={imageCategory === "all" ? "primary" : "neutral"}
                   size="sm"
                   onClick={() => setImageCategory("all")}
                   className={imageCategory !== "all" ? "bg-transparent" : ""}
@@ -348,7 +323,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                   すべて
                 </Button>
                 <Button
-                  variant={imageCategory === "exterior" ? "default" : "outline"}
+                  variant={imageCategory === "exterior" ? "primary" : "neutral"}
                   size="sm"
                   onClick={() => setImageCategory("exterior")}
                   className={imageCategory !== "exterior" ? "bg-transparent" : ""}
@@ -356,7 +331,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                   外装
                 </Button>
                 <Button
-                  variant={imageCategory === "interior" ? "default" : "outline"}
+                  variant={imageCategory === "interior" ? "primary" : "neutral"}
                   size="sm"
                   onClick={() => setImageCategory("interior")}
                   className={imageCategory !== "interior" ? "bg-transparent" : ""}
@@ -364,7 +339,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                   内装
                 </Button>
                 <Button
-                  variant={imageCategory === "features" ? "default" : "outline"}
+                  variant={imageCategory === "features" ? "primary" : "neutral"}
                   size="sm"
                   onClick={() => setImageCategory("features")}
                   className={imageCategory !== "features" ? "bg-transparent" : ""}
@@ -372,7 +347,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                   機能
                 </Button>
                 <Button
-                  variant={imageCategory === "damage" ? "default" : "outline"}
+                  variant={imageCategory === "damage" ? "primary" : "neutral"}
                   size="sm"
                   onClick={() => setImageCategory("damage")}
                   className={imageCategory !== "damage" ? "bg-transparent" : ""}
@@ -417,7 +392,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                 </div>
                 <div className="flex items-center justify-between py-2 border-b">
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Gauge className="w-4 h-4" />
+                    <Icons.Graph className="w-4 h-4" />
                     走行距離
                   </span>
                   <span className="text-sm font-medium">{vehicle.specs.mileage.toLocaleString()}km</span>
@@ -428,7 +403,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                 </div>
                 <div className="flex items-center justify-between py-2 border-b">
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Palette className="w-4 h-4" />
+                    <Icons.Settings className="w-4 h-4" />
                     外装色
                   </span>
                   <span className="text-sm font-medium">{vehicle.specs.color}</span>
@@ -445,14 +420,14 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <div className="space-y-3">
                 <div className="flex items-center justify-between py-2 border-b">
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Fuel className="w-4 h-4" />
+                    <Icons.Garage className="w-4 h-4" />
                     燃料
                   </span>
                   <span className="text-sm font-medium">{vehicle.specs.fuel}</span>
                 </div>
                 <div className="flex items-center justify-between py-2 border-b">
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Settings className="w-4 h-4" />
+                    <Icons.Settings className="w-4 h-4" />
                     駆動
                   </span>
                   <span className="text-sm font-medium">{vehicle.specs.drive}</span>
@@ -463,14 +438,14 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                 </div>
                 <div className="flex items-center justify-between py-2 border-b">
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <Users className="w-4 h-4" />
+                    <Icons.CustomerList className="w-4 h-4" />
                     定員
                   </span>
                   <span className="text-sm font-medium">{vehicle.specs.capacity}人</span>
                 </div>
                 <div className="flex items-center justify-between py-2 border-b">
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
-                    <DoorClosed className="w-4 h-4" />
+                    <Icons.Car className="w-4 h-4" />
                     ドア
                   </span>
                   <span className="text-sm font-medium">{vehicle.specs.doors}ドア</span>
@@ -492,7 +467,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
             <h3 className="text-lg font-semibold mb-4">セールスポイント</h3>
             <div className="flex flex-wrap gap-2">
               {vehicle.highlights.map((highlight, idx) => (
-                <Badge key={idx} variant="secondary" className="px-3 py-1">
+                <Badge key={idx} variant="default" className="px-3 py-1">
                   {highlight}
                 </Badge>
               ))}
@@ -514,7 +489,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <TabsContent value="safety" className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {vehicle.equipment.safety.map((item, idx) => (
-                    <Badge key={idx} variant="outline">
+                    <Badge key={idx} variant="default">
                       {item}
                     </Badge>
                   ))}
@@ -523,7 +498,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <TabsContent value="comfort" className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {vehicle.equipment.comfort.map((item, idx) => (
-                    <Badge key={idx} variant="outline">
+                    <Badge key={idx} variant="default">
                       {item}
                     </Badge>
                   ))}
@@ -532,7 +507,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <TabsContent value="interior" className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {vehicle.equipment.interior.map((item, idx) => (
-                    <Badge key={idx} variant="outline">
+                    <Badge key={idx} variant="default">
                       {item}
                     </Badge>
                   ))}
@@ -541,7 +516,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <TabsContent value="assist" className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {vehicle.equipment.assist.map((item, idx) => (
-                    <Badge key={idx} variant="outline">
+                    <Badge key={idx} variant="default">
                       {item}
                     </Badge>
                   ))}
@@ -550,7 +525,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <TabsContent value="key" className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {vehicle.equipment.key.map((item, idx) => (
-                    <Badge key={idx} variant="outline">
+                    <Badge key={idx} variant="default">
                       {item}
                     </Badge>
                   ))}
@@ -559,7 +534,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               <TabsContent value="documents" className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {vehicle.equipment.documents.map((item, idx) => (
-                    <Badge key={idx} variant="outline">
+                    <Badge key={idx} variant="default">
                       {item}
                     </Badge>
                   ))}
@@ -593,7 +568,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
                   <div className="space-y-2">
                     {filteredDamages.map((damage, idx) => (
                       <div key={idx} className="flex items-center gap-3 p-2 bg-muted rounded">
-                        <Badge variant="outline">{damage.code}</Badge>
+                        <Badge variant="default">{damage.code}</Badge>
                         <span className="text-sm font-medium">{damage.location}</span>
                         <span className="text-sm text-muted-foreground">{damage.note}</span>
                       </div>
@@ -605,7 +580,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
               </div>
               <div className="p-4 bg-blue-50 dark:bg-blue-950 rounded-lg">
                 <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                  <AlertCircle className="w-4 h-4" />
+                  <Icons.Caution className="w-4 h-4" />
                   AI コンディション要約
                 </h4>
                 <p className="text-sm text-muted-foreground">{vehicle.condition.aiSummary}</p>
@@ -619,7 +594,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4" />
+                  <Icons.Graph className="w-4 h-4" />
                   相場・利益分析
                 </h4>
                 <div className="space-y-2">
@@ -655,7 +630,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
 
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
+                  <Icons.Clock className="w-4 h-4" />
                   回転・適合度
                 </h4>
                 <div className="space-y-2">
@@ -680,7 +655,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
 
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Package className="w-4 h-4" />
+                  <Icons.Documents className="w-4 h-4" />
                   出品者信用
                 </h4>
                 <div className="space-y-2">
@@ -705,7 +680,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
 
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Truck className="w-4 h-4" />
+                  <Icons.Car className="w-4 h-4" />
                   物流・資金
                 </h4>
                 <div className="space-y-2">
@@ -735,14 +710,14 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
         <div className="space-y-4">
           <Card className="p-4 sticky top-24">
             <div className="space-y-2">
-              <Button size="lg" className="w-full bg-black text-white hover:bg-black/90">
+              <Button size="md" className="w-full bg-black text-white hover:bg-black/90">
                 見積作成
               </Button>
-              <Button variant="outline" className="w-full bg-transparent">
+              <Button variant="primary" className="w-full bg-transparent">
                 比較に追加
               </Button>
-              <Button variant="outline" className="w-full bg-transparent">
-                <Share2 className="w-4 h-4 mr-2" />
+              <Button variant="primary" className="w-full bg-transparent">
+                  <Icons.Send className="w-4 h-4 mr-2" />
                 共有
               </Button>
             </div>
@@ -750,17 +725,17 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
             <div className="mt-6 pt-6 border-t">
               <h4 className="text-sm font-semibold mb-3">通知設定</h4>
               <div className="space-y-2">
-                <Button variant="outline" size="sm" className="w-full justify-start bg-transparent">
-                  <Bell className="w-4 h-4 mr-2" />
+                <Button variant="primary" size="sm" className="w-full justify-start bg-transparent">
+                  <Icons.Star className="w-4 h-4 mr-2" />
                   この車の更新を通知
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="primary"
                   size="sm"
                   className="w-full justify-start bg-transparent"
                   onClick={handleOpenNotificationModal}
                 >
-                  <Bell className="w-4 h-4 mr-2" />
+                  <Icons.Star className="w-4 h-4 mr-2" />
                   この条件の新着を通知
                 </Button>
               </div>
@@ -975,7 +950,7 @@ export function VehicleDetail({ vehicleId, onBack, onPrevious, onNext }: Vehicle
           </div>
 
           <DialogFooter>
-            <Button variant="outline" onClick={() => setShowNotificationModal(false)}>
+            <Button variant="primary" onClick={() => setShowNotificationModal(false)}>
               キャンセル
             </Button>
             <Button onClick={handleSaveNotification}>通知設定を保存</Button>

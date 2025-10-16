@@ -20,7 +20,7 @@ export function FilterChips<T extends string>({ items, value, onChange, classNam
         return (
           <Button
             key={item}
-            variant={isActive ? "default" : "outline"}
+            variant={isActive ? "primary" : "neutral"}
             size="sm"
             onClick={() => onChange(item)}
             className={cn("h-9 min-w-[48px]", chipClassName)}

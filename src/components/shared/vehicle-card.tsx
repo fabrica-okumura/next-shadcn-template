@@ -57,7 +57,6 @@ export function VehicleCard({
       bodyClassName={bodyClassName}
     >
       <div className="space-y-2">
-        ああああああああああああああああああああああ
         {header}
         {priceSection}
       </div>

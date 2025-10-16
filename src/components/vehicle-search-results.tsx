@@ -1,17 +1,6 @@
 "use client"
 
-import {
-  ArrowUpDown,
-  ArrowUp,
-  ArrowDown,
-  ChevronLeft,
-  ChevronRight,
-  Heart,
-  LayoutGrid,
-  LayoutList,
-  Search,
-  Bell,
-} from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -284,9 +273,9 @@ export function VehicleSearchResults({
 
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field) {
-      return <ArrowUpDown className="w-3 h-3 ml-1" />
+      return <Icons.ArrowUp className="w-3 h-3 ml-1" />
     }
-    return sortDirection === "asc" ? <ArrowUp className="w-3 h-3 ml-1" /> : <ArrowDown className="w-3 h-3 ml-1" />
+    return sortDirection === "asc" ? <Icons.ArrowUp className="w-3 h-3 ml-1" /> : <Icons.ArrowDown className="w-3 h-3 ml-1" />
   }
 
   return (
@@ -303,20 +292,20 @@ export function VehicleSearchResults({
           {negotiationMode && (
             <div className="flex gap-1 border rounded-lg p-1">
               <Button
-                variant="neutral"
+                variant="primary"
                 size="sm"
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("card")}
               >
-                <LayoutGrid className="w-4 h-4" />
+                <Icons.DragHandle className="w-4 h-4" />
               </Button>
               <Button
-                variant="neutral"
+                variant="primary"
                 size="sm"
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("table")}
               >
-                <LayoutList className="w-4 h-4" />
+                <Icons.List className="w-4 h-4" />
               </Button>
             </div>
           )}
@@ -330,7 +319,7 @@ export function VehicleSearchResults({
         <Card className="p-12">
           <div className="flex flex-col items-center justify-center text-center space-y-6">
             <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center">
-              <Search className="w-12 h-12 text-muted-foreground" />
+              <Icons.Search className="w-12 h-12 text-muted-foreground" />
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold">検索条件に一致する車両が見つかりませんでした</h3>
@@ -340,12 +329,12 @@ export function VehicleSearchResults({
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-              <Button size="lg" className="flex-1 gap-2" onClick={handleSaveCondition}>
-                <Bell className="w-4 h-4" />
+              <Button size="md" className="flex-1 gap-2" onClick={handleSaveCondition}>
+                <Icons.Star className="w-4 h-4" />
                 検索条件を保存して通知を受け取る
               </Button>
               <Button
-                size="lg"
+                size="md"
                 className="flex-1"
                 onClick={() => {
                   // Reset search or modify conditions
@@ -388,7 +377,7 @@ export function VehicleSearchResults({
               <thead className="bg-muted">
                 <tr className="border-b border-border">
                   <th className="px-4 py-3 text-left text-sm font-semibold sticky left-0 bg-muted z-20">
-                    <Heart
+                    <Icons.Star
                       className={`w-5 h-5 cursor-pointer transition-colors ${
                         selectedVehicles.size === vehicles.length
                           ? "fill-red-400 text-red-400"
@@ -474,7 +463,7 @@ export function VehicleSearchResults({
                     onClick={() => onVehicleClick(vehicle.listingNumber)} // Added click handler to navigate to detail
                   >
                     <td className="px-4 py-3 sticky left-0 bg-inherit z-10">
-                      <Heart
+                      <Icons.Star
                         className={`w-5 h-5 cursor-pointer transition-colors ${
                           selectedVehicles.has(vehicle.id)
                             ? "fill-red-400 text-red-400"
@@ -543,22 +532,22 @@ export function VehicleSearchResults({
           </span>
           <div className="flex gap-1">
             <Button
-              variant="neutral"
+              variant="primary"
               size="sm"
               onClick={handlePreviousPage}
               disabled={currentPage === 1}
               className="h-8 w-8 p-0"
             >
-              <ChevronLeft className="h-4 w-4" />
+              <Icons.ArrowLeft className="h-4 w-4" />
             </Button>
             <Button
-              variant="neutral"
+              variant="primary"
               size="sm"
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
               className="h-8 w-8 p-0"
             >
-              <ChevronRight className="h-4 w-4" />
+              <Icons.ArrowRight className="h-4 w-4" />
             </Button>
           </div>
         </div>
@@ -566,7 +555,7 @@ export function VehicleSearchResults({
 
       <div className="fixed bottom-6 right-6 z-50">
         <Button
-          variant="neutral"
+          variant="primary"
           size="sm"
           onClick={() => setShowZeroResults(!showZeroResults)}
           className="shadow-lg"

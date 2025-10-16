@@ -1,6 +1,6 @@
 "use client"
 
-import { X, Calendar, Gauge, Palette, Settings, MapPin, Star } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
@@ -40,7 +40,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
         <div className="sticky top-0 bg-white border-b p-4 flex items-center justify-between z-10">
           <h2 className="text-xl font-semibold">車両比較 ({vehicles.length}台)</h2>
           <Button variant="ghost" size="sm" onClick={onClose}>
-            <X className="w-5 h-5" />
+            <Icons.Close className="w-5 h-5" />
           </Button>
         </div>
 
@@ -106,7 +106,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 型式 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Settings className="w-4 h-4 inline mr-1" />
+                    <Icons.Settings className="w-4 h-4 inline mr-1" />
                     型式
                   </td>
                   {vehicles.map((vehicle) => (
@@ -119,7 +119,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 排気量 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Gauge className="w-4 h-4 inline mr-1" />
+                    <Icons.Graph className="w-4 h-4 inline mr-1" />
                     排気量
                   </td>
                   {vehicles.map((vehicle) => (
@@ -142,7 +142,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 車検 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Calendar className="w-4 h-4 inline mr-1" />
+                    <Icons.Calendar className="w-4 h-4 inline mr-1" />
                     車検
                   </td>
                   {vehicles.map((vehicle) => (
@@ -155,7 +155,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 色 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Palette className="w-4 h-4 inline mr-1" />色
+                    <Icons.Settings className="w-4 h-4 inline mr-1" />色
                   </td>
                   {vehicles.map((vehicle) => (
                     <td key={vehicle.id} className="border border-border p-3 text-center">
@@ -177,7 +177,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 所在地 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <MapPin className="w-4 h-4 inline mr-1" />
+                    <Icons.Pickup className="w-4 h-4 inline mr-1" />
                     所在地
                   </td>
                   {vehicles.map((vehicle) => (
@@ -190,13 +190,13 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 評価 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Star className="w-4 h-4 inline mr-1" />
+                    <Icons.Star className="w-4 h-4 inline mr-1" />
                     評価
                   </td>
                   {vehicles.map((vehicle) => (
                     <td key={vehicle.id} className="border border-border p-3 text-center">
                       <div className="flex items-center justify-center">
-                        <Star className="w-4 h-4 text-yellow-500 fill-yellow-500 mr-1" />
+                        <Icons.Star className="w-4 h-4 text-yellow-500 fill-yellow-500 mr-1" />
                         <span className="font-medium">{vehicle.rating}</span>
                       </div>
                     </td>
@@ -207,7 +207,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
           </div>
 
           <div className="mt-6 flex justify-end">
-            <Button onClick={onClose} variant="outline">
+            <Button onClick={onClose} variant="primary">
               閉じる
             </Button>
           </div>

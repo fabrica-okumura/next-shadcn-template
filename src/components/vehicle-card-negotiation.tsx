@@ -1,6 +1,6 @@
 "use client"
 
-import { Heart } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -79,12 +79,12 @@ export function VehicleCardNegotiation({
           </Badge>
         )}
         {vehicle.isInNegotiation && (
-          <Badge variant="secondary" className="text-xs px-2 py-0.5">
+          <Badge variant="default" className="text-xs px-2 py-0.5">
             商談中
           </Badge>
         )}
         {vehicle.isPriceDown && (
-          <Badge variant="outline" className="text-xs px-2 py-0.5 border-red-500 text-red-600">
+          <Badge variant="default" className="text-xs px-2 py-0.5 border-red-500 text-red-600">
             値下げ
           </Badge>
         )}
@@ -226,7 +226,7 @@ export function VehicleCardNegotiation({
           <div className="space-y-2">
             <div className="flex gap-2">
               <Button
-                variant="outline"
+                variant="primary"
                 size="sm"
                 className="flex-1 h-9 text-xs bg-transparent"
                 onClick={(e) => {
@@ -234,11 +234,11 @@ export function VehicleCardNegotiation({
                   onFavoriteToggle?.()
                 }}
               >
-                <Heart className={`w-3.5 h-3.5 mr-1.5 ${vehicle.favorite ? "fill-red-500 text-red-500" : ""}`} />
+                <Icons.Star className={`w-3.5 h-3.5 mr-1.5 ${vehicle.favorite ? "fill-red-500 text-red-500" : ""}`} />
                 お気に入り追加
               </Button>
               <Button
-                variant="outline"
+                variant="primary"
                 size="sm"
                 className="px-3 h-9 text-xs bg-transparent"
                 onClick={(e) => {
@@ -289,7 +289,7 @@ export function VehicleCardNegotiation({
             <div className="text-right">
               <div className="text-xs text-muted-foreground mb-1">お問合せ（無料電話）</div>
               <div className="text-xl font-bold">{vehicle.dealer.phone}</div>
-              <Button variant="neutral" size="sm" className="mt-2 text-xs bg-transparent">
+              <Button variant="primary" size="sm" className="mt-2 text-xs bg-transparent">
                 来店予約
               </Button>
             </div>

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { ChevronDown, Plus } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { useState } from "react"
 
 interface SearchWindowProps {
@@ -161,7 +161,7 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
           <div className="border-t border-border mt-4 pt-4">
             <div className="flex justify-between items-center">
               <div className="flex justify-center space-x-3 flex-1">
-                <Button variant="neutral" className="min-w-[120px] h-10 bg-transparent">
+                <Button variant="primary" className="min-w-[120px] h-10 bg-transparent">
                   クリア
                 </Button>
                 <Button onClick={onSearch} className="bg-primary hover:bg-primary/90 min-w-[120px] h-10">
@@ -172,13 +172,13 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
               <div className="relative">
                 <CollapsibleTrigger asChild>
                   <Button
-                    variant="neutral"
+                    variant="primary"
                     size="sm"
                     className="flex items-center gap-2 bg-transparent min-w-[120px] h-10"
                   >
-                    <Plus className="w-4 h-4" />
+                    <Icons.Plus className="w-4 h-4" />
                     詳細条件
-                    <ChevronDown className={`w-4 h-4 transition-transform ${isDetailedOpen ? "rotate-180" : ""}`} />
+                    <Icons.ArrowDown className={`w-4 h-4 transition-transform ${isDetailedOpen ? "rotate-180" : ""}`} />
                   </Button>
                 </CollapsibleTrigger>
               </div>

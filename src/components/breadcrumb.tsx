@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronRight } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 
 interface BreadcrumbItem {
   label: string
@@ -16,7 +16,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
     <nav className="flex items-center gap-2 text-sm text-muted-foreground my-4">
       {items.map((item, index) => (
         <div key={index} className="flex items-center gap-2">
-          {index > 0 && <ChevronRight className="w-4 h-4" />}
+          {index > 0 && <Icons.ArrowRight className="w-4 h-4" />}
           {item.onClick ? (
             <button onClick={item.onClick} className="hover:text-foreground transition-colors">
               {item.label}

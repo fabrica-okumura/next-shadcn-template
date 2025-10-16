@@ -1,6 +1,6 @@
 "use client"
 
-import { Eye, Calendar, Gauge, Palette, Settings } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 
 import { VehicleCard } from "@/components/shared/vehicle-card"
 import { Button } from "@/components/ui/button"
@@ -177,33 +177,33 @@ export function VehicleGrid({ negotiationMode }: VehicleGridProps) {
             specs={
               <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-1">
-                  <Settings className="h-3 w-3" />
+                  <Icons.Settings className="h-3 w-3" />
                   <span>{vehicle.grade}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span>{vehicle.type}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Gauge className="h-3 w-3" />
+                  <Icons.Graph className="h-3 w-3" />
                   <span>{vehicle.displacement}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span>{vehicle.mileage}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Calendar className="h-3 w-3" />
+                  <Icons.Calendar className="h-3 w-3" />
                   <span>車検: {vehicle.inspection}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Palette className="h-3 w-3" />
+                  <Icons.Settings className="h-3 w-3" />
                   <span>{vehicle.color}</span>
                 </div>
               </div>
             }
             footer={
               <div className="flex space-x-2 pt-2">
-                <Button variant="neutral" size="sm" className="flex-1 h-10 min-w-[120px] bg-transparent">
-                  <Eye className="mr-1 h-4 w-4" />
+                <Button variant="primary" size="sm" className="flex-1 h-10 min-w-[120px] bg-transparent">
+                  <Icons.Visibility className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 {!negotiationMode && (

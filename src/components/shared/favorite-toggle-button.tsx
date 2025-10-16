@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, MouseEventHandler } from "react"
 import { useState } from "react"
 
-import { Heart } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 
 import { cn } from "@/lib/utils"
 
@@ -43,7 +43,7 @@ export function FavoriteToggleButton({ active, defaultActive = false, onValueCha
       onClick={handleClick}
       {...props}
     >
-      <Heart
+      <Icons.Star
         className={cn(
           "size-4",
           currentActive

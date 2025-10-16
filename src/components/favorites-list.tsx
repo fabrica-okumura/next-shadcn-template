@@ -1,6 +1,6 @@
 "use client"
 
-import { Heart, Eye, Calendar, Gauge, Palette, Settings, MapPin, Star } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 
 import { SectionHeader } from "@/components/shared/section-header"
 import { FavoriteToggleButton } from "@/components/shared/favorite-toggle-button"
@@ -200,7 +200,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Heart className="h-6 w-6 text-primary" />}
+        icon={<Icons.Star className="h-6 w-6 text-primary" />}
         title="お気に入り車両一覧"
         action={
           <div className="flex items-center gap-4">
@@ -250,12 +250,12 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                   <div className="flex flex-wrap justify-between gap-4">
                     <div className="grid grid-cols-2 gap-3 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
-                        <Settings className="h-4 w-4" />
+                        <Icons.Settings className="h-4 w-4" />
                         <span className="font-medium text-foreground">型式:</span>
                         <span>{vehicle.type}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Gauge className="h-4 w-4" />
+                        <Icons.Graph className="h-4 w-4" />
                         <span className="font-medium text-foreground">排気量:</span>
                         <span>{vehicle.displacement}</span>
                       </div>
@@ -264,12 +264,12 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                         <span>{vehicle.mileage}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Calendar className="h-4 w-4" />
+                        <Icons.Calendar className="h-4 w-4" />
                         <span className="font-medium text-foreground">車検:</span>
                         <span>{vehicle.inspection}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Palette className="h-4 w-4" />
+                        <Icons.Settings className="h-4 w-4" />
                         <span className="font-medium text-foreground">色:</span>
                         <span>{vehicle.color}</span>
                       </div>
@@ -303,23 +303,23 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b pb-4">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
-                      <MapPin className="h-4 w-4" />
+                      <Icons.Pickup className="h-4 w-4" />
                       <span className="font-medium text-foreground">所在地:</span>
                       <span>{vehicle.location}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                      <Icons.Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                       <span className="font-medium">{vehicle.rating}</span>
                     </div>
                   </div>
                   <div className="flex gap-2">
                     <Button
-                      variant="neutral"
+                      variant="primary"
                       size="sm"
                       className="h-10 min-w-[120px]"
                       onClick={() => onVehicleClick?.(vehicle.listingNumber)}
                     >
-                      <Eye className="mr-1 h-4 w-4" />
+                      <Icons.Visibility className="mr-1 h-4 w-4" />
                       詳細を見る
                     </Button>
                     <Button size="sm" className="h-10 min-w-[120px] bg-primary hover:bg-primary/90">
@@ -340,7 +340,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                     <div>評価: {vehicle.dealer.rating}点 ({vehicle.dealer.reviewCount}件)</div>
                     <div className="font-semibold text-foreground">{vehicle.dealer.phone}</div>
                   </div>
-                  <Button variant="neutral" size="sm" className="w-full text-xs bg-transparent">
+                  <Button variant="primary" size="sm" className="w-full text-xs bg-transparent">
                     来店予約
                   </Button>
                 </div>

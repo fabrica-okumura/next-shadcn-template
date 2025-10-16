@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { History, Search, Trash2, RotateCcw, X } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -123,26 +123,26 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
       <div className="container mx-auto p-6 max-w-6xl">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
-            <History className="w-6 h-6" />
+            <Icons.Clock className="w-6 h-6" />
             <h1 className="text-2xl font-bold">検索履歴</h1>
             <span className="text-sm text-muted-foreground">({historyItems.length}件)</span>
           </div>
           <div className="flex items-center space-x-2">
             {historyItems.length > 0 && (
-              <Button variant="outline" size="sm" onClick={handleClearAll} className="bg-transparent">
-                <Trash2 className="w-4 h-4 mr-2" />
+              <Button variant="primary" size="sm" onClick={handleClearAll} className="bg-transparent">
+                <Icons.Trash className="w-4 h-4 mr-2" />
                 すべて削除
               </Button>
             )}
             <Button variant="ghost" size="icon" onClick={onClose}>
-              <X className="w-5 h-5" />
+              <Icons.Close className="w-5 h-5" />
             </Button>
           </div>
         </div>
 
         {historyItems.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 text-center">
-            <History className="w-16 h-16 text-muted-foreground mb-4" />
+            <Icons.Clock className="w-16 h-16 text-muted-foreground mb-4" />
             <p className="text-lg text-muted-foreground">検索履歴がありません</p>
             <p className="text-sm text-muted-foreground mt-2">検索を実行すると、ここに履歴が表示されます</p>
           </div>
@@ -157,7 +157,7 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center space-x-2 mb-2">
-                      <Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                      <Icons.Search className="w-4 h-4 text-muted-foreground flex-shrink-0" />
                       <span className="font-medium text-base">{item.query}</span>
                       <span className="text-sm text-muted-foreground">({item.resultCount}件)</span>
                     </div>
@@ -166,12 +166,12 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
                   </div>
                   <div className="flex items-center space-x-2 ml-4">
                     <Button
-                      variant="outline"
+                      variant="primary"
                       size="sm"
                       onClick={(e) => handleReSearch(item.id, e)}
                       className="bg-transparent"
                     >
-                      <RotateCcw className="w-4 h-4 mr-2" />
+                      <Icons.Refresh className="w-4 h-4 mr-2" />
                       再検索
                     </Button>
                     <Button
@@ -180,7 +180,7 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
                       onClick={(e) => handleDelete(item.id, e)}
                       className="text-muted-foreground hover:text-destructive"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <Icons.Trash className="w-4 h-4" />
                     </Button>
                   </div>
                 </div>

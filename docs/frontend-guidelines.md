@@ -3,9 +3,8 @@
 > このドキュメントは暫定版です。随時更新してください。
 
 ## 1. プロジェクト概要
-- 使用技術: Next.js 15.5 / TypeScript / Tailwind CSS v4 / Shadcn UI
-- ビルド・実行: `npm run dev` / `npm run build`
-- デザインソース: (Figma リンクを追記)
+- 技術スタック: Next.js 15.5 / TypeScript / Tailwind CSS v4 / Shadcn UI
+- パッケージマネージャーは npm とする（pnpmやYarnは不使用）。
 
 ## 2. 作業フロー
 - Issue またはチケットに背景・要件・完了条件を明記する。

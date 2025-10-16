@@ -1,4 +1,4 @@
-import { Star, TrendingUp, Eye, Settings, Gauge, Calendar, Palette } from "lucide-react"
+import { Icons } from "@/components/ui/icon"
 
 import { SectionHeader } from "@/components/shared/section-header"
 import { VehicleCard } from "@/components/shared/vehicle-card"
@@ -44,11 +44,11 @@ export function FeaturedInventory() {
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Star className="h-5 w-5 text-primary" />}
+        icon={<Icons.Star className="h-5 w-5 text-primary" />}
         title="本日の注目在庫"
         action={
-          <Button variant="neutral" size="sm">
-            <TrendingUp className="mr-1 h-4 w-4" />
+          <Button variant="primary" size="sm">
+            <Icons.Graph className="mr-1 h-4 w-4" />
             もっと見る
           </Button>
         }
@@ -74,22 +74,22 @@ export function FeaturedInventory() {
             specs={
               <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-1">
-                  <Settings className="h-3 w-3" />
+                  <Icons.Settings className="h-3 w-3" />
                   <span>{vehicle.grade}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Gauge className="h-3 w-3" />
+                  <Icons.Graph className="h-3 w-3" />
                   <span>{vehicle.displacement}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span>{vehicle.mileage}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Calendar className="h-3 w-3" />
+                  <Icons.Calendar className="h-3 w-3" />
                   <span>車検: {vehicle.inspection}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Palette className="h-3 w-3" />
+                  <Icons.Settings className="h-3 w-3" />
                   <span>{vehicle.color}</span>
                 </div>
                 <div className="flex items-center space-x-1">
@@ -99,8 +99,8 @@ export function FeaturedInventory() {
             }
             footer={
               <div className="flex space-x-2 pt-2">
-                <Button variant="neutral" size="sm" className="flex-1 bg-transparent">
-                  <Eye className="mr-1 h-4 w-4" />
+                <Button variant="primary" size="sm" className="flex-1 bg-transparent">
+                  <Icons.Visibility className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">
