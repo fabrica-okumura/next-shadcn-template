@@ -42,7 +42,7 @@ export function Header({
                 className="text-5xl font-semibold cursor-pointer hover:opacity-80 transition-opacity"
                 onClick={onNavigateHome}
               >
-                ロゴあああ
+                ロゴ
               </span>
               <div className="flex items-center space-x-2">
                 <span className="text-muted-foreground">商談モード</span>
