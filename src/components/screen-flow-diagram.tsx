@@ -17,7 +17,7 @@ export function ScreenFlowDiagram({ open, onOpenChange }: ScreenFlowDiagramProps
           <div className="flex items-center justify-between">
             <DialogTitle className="text-xl font-bold">画面遷移図</DialogTitle>
             <Button variant="primary" size="icon" onClick={() => onOpenChange(false)}>
-              <Icons.Close className="w-5 h-5" />
+              <Icons.Cross className="w-5 h-5" />
             </Button>
           </div>
         </DialogHeader>
@@ -27,7 +27,7 @@ export function ScreenFlowDiagram({ open, onOpenChange }: ScreenFlowDiagramProps
             {/* Home Screen - Central Hub */}
             <div className="flex flex-col items-center">
               <div className="bg-primary text-primary-foreground rounded-lg p-6 shadow-lg border-2 border-primary w-80 text-center">
-                <Icons.Home className="w-8 h-8 mx-auto mb-2" />
+                <Icons.Garage className="w-8 h-8 mx-auto mb-2" />
                 <h3 className="font-bold text-lg">ホーム画面</h3>
                 <p className="text-sm mt-1 opacity-90">検索窓・条件・お気に入り・お知らせ</p>
               </div>
@@ -55,7 +55,7 @@ export function ScreenFlowDiagram({ open, onOpenChange }: ScreenFlowDiagramProps
               <div className="flex flex-col items-center space-y-4">
                 <Icons.ArrowRight className="w-6 h-6 rotate-90 text-muted-foreground" />
                 <div className="bg-card rounded-lg p-5 shadow border w-full text-center min-h-[120px] flex flex-col justify-center">
-                  <Icons.Star className="w-6 h-6 mx-auto mb-2 text-red-500" />
+                  <Icons.StarOutline className="w-6 h-6 mx-auto mb-2 text-red-500" />
                   <h4 className="font-semibold">お気に入り一覧</h4>
                   <p className="text-xs text-muted-foreground mt-1">保存した車両</p>
                 </div>
@@ -71,7 +71,7 @@ export function ScreenFlowDiagram({ open, onOpenChange }: ScreenFlowDiagramProps
               <div className="flex flex-col items-center space-y-4">
                 <Icons.ArrowRight className="w-6 h-6 rotate-90 text-muted-foreground" />
                 <div className="bg-card rounded-lg p-5 shadow border w-full text-center min-h-[120px] flex flex-col justify-center">
-                  <Icons.CustomerList className="w-6 h-6 mx-auto mb-2 text-purple-500" />
+                  <Icons.CustomerManagement className="w-6 h-6 mx-auto mb-2 text-purple-500" />
                   <h4 className="font-semibold">商談一覧</h4>
                   <p className="text-xs text-muted-foreground mt-1">顧客・商談管理</p>
                 </div>
@@ -110,12 +110,12 @@ export function ScreenFlowDiagram({ open, onOpenChange }: ScreenFlowDiagramProps
             <div className="flex justify-center pt-8 border-t">
               <div className="flex items-center gap-6">
                 <div className="bg-primary/10 text-primary rounded-lg p-5 shadow border w-64 text-center">
-                  <Icons.Home className="w-6 h-6 mx-auto mb-2" />
+                  <Icons.Garage className="w-6 h-6 mx-auto mb-2" />
                   <h4 className="font-semibold">ホーム画面</h4>
                 </div>
                 <Icons.ArrowRight className="w-6 h-6 text-muted-foreground" />
                 <div className="bg-card rounded-lg p-5 shadow border w-64 text-center">
-                  <Icons.Documents className="w-6 h-6 mx-auto mb-2 text-teal-500" />
+                  <Icons.MultipleDocuments className="w-6 h-6 mx-auto mb-2 text-teal-500" />
                   <h4 className="font-semibold">仕入れ車両一覧</h4>
                   <p className="text-xs text-muted-foreground mt-1">仕入れ済み車両</p>
                 </div>

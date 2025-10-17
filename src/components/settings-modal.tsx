@@ -31,7 +31,7 @@ export function SettingsModal({ open, onOpenChange, language, setLanguage }: Set
             <div className="bg-accent/50 rounded-lg p-4 space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Icons.AccountPlus className="w-6 h-6 text-primary" />
+                  <Icons.UserPlus className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <p className="font-medium text-foreground">田中 太郎</p>
@@ -41,15 +41,15 @@ export function SettingsModal({ open, onOpenChange, language, setLanguage }: Set
               <Separator />
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm">
-                  <Icons.Mail className="w-4 h-4 text-muted-foreground" />
+                  <Icons.IconMail className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground">tanaka@example.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Icons.Mail className="w-4 h-4 text-muted-foreground" />
+                  <Icons.IconMail className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground">090-1234-5678</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <Icons.Home className="w-4 h-4 text-muted-foreground" />
+                  <Icons.Garage className="w-4 h-4 text-muted-foreground" />
                   <span className="text-muted-foreground">株式会社サンプル</span>
                 </div>
               </div>

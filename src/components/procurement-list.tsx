@@ -190,13 +190,13 @@ export function ProcurementList() {
       case "連絡待ち":
         return <Icons.Clock className="w-4 h-4" />
       case "審査中":
-        return <Icons.Document className="w-4 h-4" />
+        return <Icons.MultipleDocuments className="w-4 h-4" />
       case "落札手続き":
-        return <Icons.CheckmarkCircle className="w-4 h-4" />
+        return <Icons.Good className="w-4 h-4" />
       case "陸送手配／輸送中":
         return <Icons.Car className="w-4 h-4" />
       case "完了":
-        return <Icons.CheckmarkCircle className="w-4 h-4" />
+        return <Icons.Good className="w-4 h-4" />
     }
   }
 
@@ -252,7 +252,7 @@ export function ProcurementList() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-4">
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Icons.Home className="w-4 h-4" />
+                    <Icons.Garage className="w-4 h-4" />
                     <span>{vehicle.auctionHouse}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
@@ -260,7 +260,7 @@ export function ProcurementList() {
                     <span>オークション日: {vehicle.auctionDate}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Icons.Pickup className="w-4 h-4" />
+                    <Icons.Car className="w-4 h-4" />
                     <span>{vehicle.location}</span>
                   </div>
                   {vehicle.estimatedArrival && (

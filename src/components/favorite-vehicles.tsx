@@ -134,7 +134,7 @@ export function FavoriteVehicles({ negotiationMode, onShowList, onVehicleClick }
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Icons.Star className="h-5 w-5 text-primary" />}
+        icon={<Icons.StarOutline className="h-5 w-5 text-primary" />}
         title="お気に入り車両"
         action={
           <Button variant="primary" size="sm" className="h-10 min-w-[120px] bg-transparent" onClick={onShowList}>
@@ -210,7 +210,7 @@ export function FavoriteVehicles({ negotiationMode, onShowList, onVehicleClick }
                   className="flex-1 h-10 min-w-[120px] border-[#b2b6b8] hover:bg-white"
                   onClick={() => onVehicleClick?.(vehicle.id.toString())}
                 >
-                  <Icons.Visibility className="mr-1 h-4 w-4" />
+                  <Icons.Eye className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 {!negotiationMode && (

@@ -130,12 +130,12 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
           <div className="flex items-center space-x-2">
             {historyItems.length > 0 && (
               <Button variant="primary" size="sm" onClick={handleClearAll} className="bg-transparent">
-                <Icons.Trash className="w-4 h-4 mr-2" />
+                <Icons.Trashbox className="w-4 h-4 mr-2" />
                 すべて削除
               </Button>
             )}
             <Button variant="ghost" size="icon" onClick={onClose}>
-              <Icons.Close className="w-5 h-5" />
+              <Icons.Cross className="w-5 h-5" />
             </Button>
           </div>
         </div>
@@ -171,7 +171,7 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
                       onClick={(e) => handleReSearch(item.id, e)}
                       className="bg-transparent"
                     >
-                      <Icons.Refresh className="w-4 h-4 mr-2" />
+                      <Icons.Reload className="w-4 h-4 mr-2" />
                       再検索
                     </Button>
                     <Button
@@ -180,7 +180,7 @@ export function SearchHistoryList({ onClose, onSearchClick }: SearchHistoryListP
                       onClick={(e) => handleDelete(item.id, e)}
                       className="text-muted-foreground hover:text-destructive"
                     >
-                      <Icons.Trash className="w-4 h-4" />
+                      <Icons.Trashbox className="w-4 h-4" />
                     </Button>
                   </div>
                 </div>

@@ -200,7 +200,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Icons.Star className="h-6 w-6 text-primary" />}
+        icon={<Icons.StarOutline className="h-6 w-6 text-primary" />}
         title="お気に入り車両一覧"
         action={
           <div className="flex items-center gap-4">
@@ -303,12 +303,12 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b pb-4">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
-                      <Icons.Pickup className="h-4 w-4" />
+                      <Icons.Car className="h-4 w-4" />
                       <span className="font-medium text-foreground">所在地:</span>
                       <span>{vehicle.location}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Icons.Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                      <Icons.StarOutline className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                       <span className="font-medium">{vehicle.rating}</span>
                     </div>
                   </div>
@@ -319,7 +319,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                       className="h-10 min-w-[120px]"
                       onClick={() => onVehicleClick?.(vehicle.listingNumber)}
                     >
-                      <Icons.Visibility className="mr-1 h-4 w-4" />
+                      <Icons.Eye className="mr-1 h-4 w-4" />
                       詳細を見る
                     </Button>
                     <Button size="sm" className="h-10 min-w-[120px] bg-primary hover:bg-primary/90">

@@ -44,7 +44,7 @@ export function FeaturedInventory() {
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Icons.Star className="h-5 w-5 text-primary" />}
+        icon={<Icons.StarOutline className="h-5 w-5 text-primary" />}
         title="本日の注目在庫"
         action={
           <Button variant="primary" size="sm">
@@ -100,7 +100,7 @@ export function FeaturedInventory() {
             footer={
               <div className="flex space-x-2 pt-2">
                 <Button variant="primary" size="sm" className="flex-1 bg-transparent">
-                  <Icons.Visibility className="mr-1 h-4 w-4" />
+                  <Icons.Eye className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90">

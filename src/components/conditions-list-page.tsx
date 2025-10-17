@@ -160,7 +160,7 @@ export function ConditionsListPage({ onConditionClick }: ConditionsListPageProps
                 </div>
                 <div className="flex items-center gap-4 flex-shrink-0">
                   <div className="flex items-center gap-2">
-                    <Icons.Visibility className="w-4 h-4 text-muted-foreground" />
+                    <Icons.Eye className="w-4 h-4 text-muted-foreground" />
                     <span className="font-bold text-lg">{condition.hitCount}台</span>
                   </div>
                   {condition.newCount > 0 && (

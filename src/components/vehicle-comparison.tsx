@@ -40,7 +40,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
         <div className="sticky top-0 bg-white border-b p-4 flex items-center justify-between z-10">
           <h2 className="text-xl font-semibold">車両比較 ({vehicles.length}台)</h2>
           <Button variant="ghost" size="sm" onClick={onClose}>
-            <Icons.Close className="w-5 h-5" />
+            <Icons.Cross className="w-5 h-5" />
           </Button>
         </div>
 
@@ -177,7 +177,7 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 所在地 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Icons.Pickup className="w-4 h-4 inline mr-1" />
+                    <Icons.Car className="w-4 h-4 inline mr-1" />
                     所在地
                   </td>
                   {vehicles.map((vehicle) => (
@@ -190,13 +190,13 @@ export function VehicleComparison({ vehicles, negotiationMode, onClose }: Vehicl
                 {/* 評価 */}
                 <tr>
                   <td className="border border-border p-3 font-medium bg-muted/50 sticky left-0 z-10">
-                    <Icons.Star className="w-4 h-4 inline mr-1" />
+                    <Icons.StarOutline className="w-4 h-4 inline mr-1" />
                     評価
                   </td>
                   {vehicles.map((vehicle) => (
                     <td key={vehicle.id} className="border border-border p-3 text-center">
                       <div className="flex items-center justify-center">
-                        <Icons.Star className="w-4 h-4 text-yellow-500 fill-yellow-500 mr-1" />
+                        <Icons.StarOutline className="w-4 h-4 text-yellow-500 fill-yellow-500 mr-1" />
                         <span className="font-medium">{vehicle.rating}</span>
                       </div>
                     </td>

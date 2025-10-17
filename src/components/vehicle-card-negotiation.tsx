@@ -234,7 +234,7 @@ export function VehicleCardNegotiation({
                   onFavoriteToggle?.()
                 }}
               >
-                <Icons.Star className={`w-3.5 h-3.5 mr-1.5 ${vehicle.favorite ? "fill-red-500 text-red-500" : ""}`} />
+                <Icons.StarOutline className={`w-3.5 h-3.5 mr-1.5 ${vehicle.favorite ? "fill-red-500 text-red-500" : ""}`} />
                 お気に入り追加
               </Button>
               <Button

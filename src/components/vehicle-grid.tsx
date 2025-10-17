@@ -203,7 +203,7 @@ export function VehicleGrid({ negotiationMode }: VehicleGridProps) {
             footer={
               <div className="flex space-x-2 pt-2">
                 <Button variant="primary" size="sm" className="flex-1 h-10 min-w-[120px] bg-transparent">
-                  <Icons.Visibility className="mr-1 h-4 w-4" />
+                  <Icons.Eye className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 {!negotiationMode && (

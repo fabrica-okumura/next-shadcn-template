@@ -64,7 +64,7 @@ export function Header({
                 <span className="ml-2">検索履歴</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowFavorites}>
-                <Icons.Star className="w-4 h-4" />
+                <Icons.StarOutline className="w-4 h-4" />
                 <span className="ml-2">お気に入り</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowProcurement}>
@@ -72,7 +72,7 @@ export function Header({
                 <span className="ml-2">仕入れ車両</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowMyPage}>
-                <Icons.AccountPlus className="w-4 h-4" />
+                <Icons.UserPlus className="w-4 h-4" />
                 <span className="ml-2">マイページ</span>
               </Button>
               <Button
@@ -81,7 +81,7 @@ export function Header({
                 className="text-muted-foreground"
                 onClick={() => setNotificationsOpen(true)}
               >
-                <Icons.Star className="w-4 h-4" />
+                <Icons.Bell className="w-4 h-4" />
               </Button>
               <Button
                 variant="primary"

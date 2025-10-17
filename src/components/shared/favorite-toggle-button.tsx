@@ -43,7 +43,7 @@ export function FavoriteToggleButton({ active, defaultActive = false, onValueCha
       onClick={handleClick}
       {...props}
     >
-      <Icons.Star
+      <Icons.StarOutline
         className={cn(
           "size-4",
           currentActive

@@ -219,7 +219,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
             お気に入り
           </Button>
           <Button variant="primary" size="sm" className="bg-transparent">
-            <Icons.Printer className="w-4 h-4 mr-2" />
+            <Icons.Printe className="w-4 h-4 mr-2" />
             印刷
           </Button>
         </div>
@@ -249,7 +249,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               ) : vehicle.accidentHistory === "有" ? (
                 <Icons.XCircle className="w-4 h-4 text-red-600" />
               ) : (
-                <Icons.HelpCircle className="w-4 h-4 text-yellow-600" />
+                <Icons.Question className="w-4 h-4 text-yellow-600" />
               )}
               <span className="font-semibold">事故歴: {vehicle.accidentHistory}</span>
             </div>

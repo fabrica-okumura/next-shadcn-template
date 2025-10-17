@@ -297,7 +297,7 @@ export function VehicleSearchResults({
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("card")}
               >
-                <Icons.DragHandle className="w-4 h-4" />
+                <Icons.DotsVertical className="w-4 h-4" />
               </Button>
               <Button
                 variant="primary"
@@ -330,7 +330,7 @@ export function VehicleSearchResults({
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
               <Button size="md" className="flex-1 gap-2" onClick={handleSaveCondition}>
-                <Icons.Star className="w-4 h-4" />
+                <Icons.StarOutline className="w-4 h-4" />
                 検索条件を保存して通知を受け取る
               </Button>
               <Button
@@ -377,7 +377,7 @@ export function VehicleSearchResults({
               <thead className="bg-muted">
                 <tr className="border-b border-border">
                   <th className="px-4 py-3 text-left text-sm font-semibold sticky left-0 bg-muted z-20">
-                    <Icons.Star
+                    <Icons.StarOutline
                       className={`w-5 h-5 cursor-pointer transition-colors ${
                         selectedVehicles.size === vehicles.length
                           ? "fill-red-400 text-red-400"
@@ -463,7 +463,7 @@ export function VehicleSearchResults({
                     onClick={() => onVehicleClick(vehicle.listingNumber)} // Added click handler to navigate to detail
                   >
                     <td className="px-4 py-3 sticky left-0 bg-inherit z-10">
-                      <Icons.Star
+                      <Icons.StarOutline
                         className={`w-5 h-5 cursor-pointer transition-colors ${
                           selectedVehicles.has(vehicle.id)
                             ? "fill-red-400 text-red-400"

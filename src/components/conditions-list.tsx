@@ -121,7 +121,7 @@ export function ConditionsList({ onViewList, onConditionClick }: ConditionsListP
               </div>
               <div className="flex items-center space-x-2 flex-shrink-0">
                 <div className="flex items-center space-x-1">
-                  <Icons.Visibility className="w-3 h-3 text-muted-foreground" />
+                  <Icons.Eye className="w-3 h-3 text-muted-foreground" />
                   <span className="font-bold text-base">{condition.hitCount}台</span>
                 </div>
                 {condition.newCount > 0 && (
