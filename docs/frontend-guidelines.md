@@ -2,9 +2,17 @@
 
 > このドキュメントは暫定版です。随時更新してください。
 
+**📖 [← AI Agents ガイドラインに戻る](../AGENTS.md)**
+
 ## 1. プロジェクト概要
-- 技術スタック: Next.js 15.5 / TypeScript / Tailwind CSS v4 / Shadcn UI
-- パッケージマネージャーは npm とする（pnpmやYarnは不使用）。
+
+### 技術スタック
+- **Next.js**: 15.5
+- **React**: 19.2
+- **TypeScript**: strict mode
+- **Tailwind CSS**: v4
+- **Shadcn UI**: UIコンポーネントライブラリ
+- **パッケージマネージャー**: npm（pnpm、Yarn は不使用）
 
 ## 2. 作業フロー
 - Issue またはチケットに背景・要件・完了条件を明記する。
@@ -12,14 +20,38 @@
 - 実装後は PR を作成し、概要・変更点・テスト結果を記載する。
 
 ## 3. コーディング規約
-- TypeScript: strict モードを前提に型安全を維持する。
-- CSS: Tailwind ユーティリティを基本とし、`globals.css` で定義されたトークンを活用する。
-- コンポーネント: Shadcn UI ベースの抽象化を尊重し、責務ごとに分割する。
-- 命名: ファイル・ディレクトリともに kebab-case とする。
-- 画像/リンク: `img` タグの代わりに `next/image`、`a` タグの代わりに `next/link` を必ず使用する。
-- CSS 変数: デザイン反映時は Figma MCP から共有されているトークン（`variables.css` 等）を優先的に利用し、数値ハードコードは避ける。対応する変数が存在しない場合のみ固定値を使用し、その理由をコメントに残す。
-- HTML: タグ構造は必要最小限とし、不要な `div` や `span` を追加しない。
-- HTML: 集客を目的とした SEO 重視のページではセマンティックなタグを厳守する。
+
+### TypeScript
+- strict モードを前提に型安全を維持する
+- `any` の使用は避け、適切な型定義を行う
+
+### CSS
+- Tailwind ユーティリティを基本とする
+- `globals.css` や `variables.css` で定義されたトークンを活用する
+- デザイン反映時は Figma MCP から共有されているトークンを優先的に利用し、数値ハードコードは避ける
+- 対応する変数が存在しない場合のみ固定値を使用し、その理由をコメントに残す
+
+### コンポーネント
+- Shadcn UI ベースの抽象化を尊重し、責務ごとに分割する
+- **Button** の variant は `"primary" | "accent" | "neutral" | "danger"` のみ使用可能
+- **Badge** の variant は `"default"` を使用
+
+### アイコン
+- **重要**: `lucide-react` ではなく、`/public/images/icons/` にあるオリジナルアイコンを使用
+- インポート: `import { Icons } from "@/components/ui/icon"`
+- 使用例: `<Icons.Search className="w-4 h-4" />`
+- 利用可能なアイコン一覧: `src/components/ui/icon.tsx` の `Icons` オブジェクトを参照
+
+### 画像・リンク
+- `img` タグの代わりに `next/image` を必ず使用する
+- `a` タグの代わりに `next/link` を必ず使用する
+
+### 命名規則
+- ファイル・ディレクトリともに kebab-case を使用する
+
+### HTML
+- タグ構造は必要最小限とし、不要な `div` や `span` を追加しない
+- 集客を目的とした SEO 重視のページではセマンティックなタグを厳守する
 
 ## 4. デザイン・アクセシビリティ
 - Figma / Storybook で確認できる UI 仕様に合わせる。
@@ -43,6 +75,29 @@
 - [ ] テストを実行した
 - [ ] 変更内容をドキュメント化した
 - [ ] 判断に迷った点は関係者に確認した
+
+## 8. トラブルシューティング
+
+### アイコンが表示されない
+- `lucide-react` ではなく `@/components/ui/icon` の `Icons` を使用しているか確認
+- アイコン名が正しいか確認（例: `Icons.Search`, `Icons.Star`）
+- `/public/images/icons/` にアイコンファイルが存在するか確認
+- 利用可能なアイコン: `src/components/ui/icon.tsx` の `Icons` オブジェクトを参照
+
+### Lint エラーが出る
+- `npm run lint` を実行してエラー内容を確認
+- Button の variant は `"primary" | "accent" | "neutral" | "danger"` のみ使用可能
+- Badge の variant は `"default"` を使用
+- アイコンは `Icons.` プレフィックスを付けて使用
+
+### ビルドエラーが出る
+- `npm install` で依存関係が正しくインストールされているか確認
+- TypeScript エラーを解消する
+- `next build` でビルドエラーの詳細を確認
+
+### 画像・リンクが正しく動作しない
+- `<img>` タグではなく `<Image>` コンポーネント（`next/image`）を使用しているか確認
+- `<a>` タグではなく `<Link>` コンポーネント（`next/link`）を使用しているか確認
 
 ---
 不明点はこのファイルに追記するか、関連ドキュメントへリンクを追加してください。
