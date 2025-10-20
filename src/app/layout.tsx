@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -24,7 +23,6 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`font-sans ${notoSansJP.variable}`}>
         {children}
-        <Analytics />
       </body>
     </html>
   )

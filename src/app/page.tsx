@@ -16,6 +16,7 @@ import { ProcurementList } from "@/components/procurement-list"
 import { VehicleDetail } from "@/components/vehicle-detail"
 import { VehicleDetailNormal } from "@/components/vehicle-detail-normal"
 import { Button } from "@/components/ui/button"
+import { Gap } from "@/components/shared/gap"
 export default function HomePage() {
   const [negotiationMode, setNegotiationMode] = useState(false)
   const [showSearchResults, setShowSearchResults] = useState(false)
@@ -26,6 +27,51 @@ export default function HomePage() {
   const [selectedNegotiationId, setSelectedNegotiationId] = useState<string | null>(null)
   const [showVehicleDetail, setShowVehicleDetail] = useState(false)
   const [selectedVehicleId, setSelectedVehicleId] = useState<string | null>(null)
+
+  const gapSamples = (
+    <section className="space-y-6 rounded-lg border border-dashed border-[var(--usage-border)] bg-white/80 p-6 shadow-sm">
+      <header className="space-y-1">
+        <h2 className="text-lg font-semibold text-[var(--body-text)]">
+          Gap コンポーネント表示確認
+        </h2>
+        <p className="text-sm text-muted-foreground">
+          `gap` サイズや `row` / `wrap` の挙動を検証するための一時的なサンプル。デザイン検証が完了したら削除してください。
+        </p>
+      </header>
+
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h3 className="text-sm font-medium text-muted-foreground">縦方向 (デフォルト)</h3>
+          <Gap gap="2xl">
+            <SampleGapItem label="Item 1" />
+            <SampleGapItem label="Item 2" />
+            <SampleGapItem label="Item 3" />
+          </Gap>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className="text-sm font-medium text-muted-foreground">横方向</h3>
+          <Gap gap="lg" row>
+            <SampleGapItem label="Item 1" />
+            <SampleGapItem label="Item 2" />
+            <SampleGapItem label="Item 3" />
+          </Gap>
+        </div>
+
+        <div className="space-y-2">
+          <h3 className="text-sm font-medium text-muted-foreground">横方向 + wrap</h3>
+          <Gap gap="sm" row wrap>
+            <SampleGapItem label="Item 1" />
+            <SampleGapItem label="Item 2" />
+            <SampleGapItem label="Item 3" />
+            <SampleGapItem label="Item 4" />
+            <SampleGapItem label="Item 5" />
+            <SampleGapItem label="Item 6" />
+          </Gap>
+        </div>
+      </div>
+    </section>
+  )
 
   const handleNegotiationClick = (negotiationId: string) => {
     setSelectedNegotiationId(negotiationId)
@@ -139,6 +185,8 @@ export default function HomePage() {
                 setShowSearchResults(true)
               }}
             />
+
+            {gapSamples}
 
             <div className="space-y-8">
               <section className="rounded-lg border border-border bg-card p-6 shadow-sm space-y-4">
@@ -572,6 +620,14 @@ export default function HomePage() {
           </>
         )}
       </main>
+    </div>
+  )
+}
+
+const SampleGapItem = ({ label }: { label: string }) => {
+  return (
+    <div className="rounded-md border border-[var(--usage-border)] bg-[var(--primitive-neutral-050)] p-3 text-sm text-[var(--body-text)] shadow-xs">
+      {label}
     </div>
   )
 }
