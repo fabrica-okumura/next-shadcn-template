@@ -1,7 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
-
+import { Icon } from "@/components/ui/icon"
 import { VehicleCard } from "@/components/shared/vehicle-card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -177,25 +176,25 @@ export function VehicleGrid({ negotiationMode }: VehicleGridProps) {
             specs={
               <div className="grid grid-cols-2 gap-2 text-sm text-muted-foreground">
                 <div className="flex items-center space-x-1">
-                  <Icons.Settings className="h-3 w-3" />
+                  <Icon name="settings" className="h-3 w-3" />
                   <span>{vehicle.grade}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span>{vehicle.type}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Icons.Graph className="h-3 w-3" />
+                  <Icon name="graph" className="h-3 w-3" />
                   <span>{vehicle.displacement}</span>
                 </div>
                 <div className="flex items-center space-x-1">
                   <span>{vehicle.mileage}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Icons.Calendar className="h-3 w-3" />
+                  <Icon name="calendar" className="h-3 w-3" />
                   <span>車検: {vehicle.inspection}</span>
                 </div>
                 <div className="flex items-center space-x-1">
-                  <Icons.Settings className="h-3 w-3" />
+                  <Icon name="settings" className="h-3 w-3" />
                   <span>{vehicle.color}</span>
                 </div>
               </div>
@@ -203,7 +202,7 @@ export function VehicleGrid({ negotiationMode }: VehicleGridProps) {
             footer={
               <div className="flex space-x-2 pt-2">
                 <Button variant="primary" size="sm" className="flex-1 h-10 min-w-[120px] bg-transparent">
-                  <Icons.Eye className="mr-1 h-4 w-4" />
+                  <Icon name="eye" className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 {!negotiationMode && (

@@ -33,14 +33,13 @@
 
 ### コンポーネント
 - Shadcn UI ベースの抽象化を尊重し、責務ごとに分割する
-- **Button** の variant は `"primary" | "accent" | "neutral" | "danger"` のみ使用可能
-- **Badge** の variant は `"default"` を使用
 
 ### アイコン
-- **重要**: `lucide-react` ではなく、`/public/images/icons/` にあるオリジナルアイコンを使用
-- インポート: `import { Icons } from "@/components/ui/icon"`
-- 使用例: `<Icons.Search className="w-4 h-4" />`
-- 利用可能なアイコン一覧: `src/components/ui/icon.tsx` の `Icons` オブジェクトを参照
+- **重要**: `lucide-react` ではなく、`/public/icons/` にあるオリジナルアイコンを使用
+- インポート: `import { Icon } from "@/components/ui/icon"`
+- 使用例: `<Icon name="search" className="w-4 h-4" />`
+- アイコン名は `src/components/ui/icon-definitions.ts` を参照し、`kebab-case` のファイル名と揃える（例: `/public/icons/star-outline.svg` → `<Icon name="star-outline" />`）
+- アイコンを追加・更新した場合は `npm run generate:icons` を実行して `icon-definitions.ts` を再生成すること
 
 ### 画像・リンク
 - `img` タグの代わりに `next/image` を必ず使用する
@@ -79,16 +78,16 @@
 ## 8. トラブルシューティング
 
 ### アイコンが表示されない
-- `lucide-react` ではなく `@/components/ui/icon` の `Icons` を使用しているか確認
-- アイコン名が正しいか確認（例: `Icons.Search`, `Icons.Star`）
-- `/public/images/icons/` にアイコンファイルが存在するか確認
-- 利用可能なアイコン: `src/components/ui/icon.tsx` の `Icons` オブジェクトを参照
+- `lucide-react` ではなく `@/components/ui/icon` の `Icon` コンポーネントを使用しているか確認
+- `<Icon name="..." />` の `name` が `icon-definitions.ts` に存在するか確認（例: `<Icon name="search" />`）
+- `/public/icons/` に該当する SVG ファイルが存在するか確認
+- アイコンを追加した際に `npm run generate:icons` を実行したか確認
 
 ### Lint エラーが出る
 - `npm run lint` を実行してエラー内容を確認
 - Button の variant は `"primary" | "accent" | "neutral" | "danger"` のみ使用可能
 - Badge の variant は `"default"` を使用
-- アイコンは `Icons.` プレフィックスを付けて使用
+- アイコンは `<Icon name="..." />` 形式で使用し、存在しない `name` を指定していないか確認
 
 ### ビルドエラーが出る
 - `npm install` で依存関係が正しくインストールされているか確認

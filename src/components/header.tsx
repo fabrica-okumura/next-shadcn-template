@@ -1,6 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { Switch } from "@/components/ui/switch"
 import { NotificationsModal } from "@/components/notifications-modal"
@@ -56,23 +56,23 @@ export function Header({
 
             <div className="flex items-center space-x-4">
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowConditions}>
-                <Icons.List className="w-4 h-4" />
+                <Icon name="list" className="w-4 h-4" />
                 <span className="ml-2">検索条件</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowSearchHistory}>
-                <Icons.Clock className="w-4 h-4" />
+                <Icon name="clock" className="w-4 h-4" />
                 <span className="ml-2">検索履歴</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowFavorites}>
-                <Icons.StarOutline className="w-4 h-4" />
+                <Icon name="star-outline" className="w-4 h-4" />
                 <span className="ml-2">お気に入り</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowProcurement}>
-                <Icons.Car className="w-4 h-4" />
+                <Icon name="car" className="w-4 h-4" />
                 <span className="ml-2">仕入れ車両</span>
               </Button>
               <Button variant="primary" size="sm" className="text-muted-foreground" onClick={onShowMyPage}>
-                <Icons.UserPlus className="w-4 h-4" />
+                <Icon name="user-plus" className="w-4 h-4" />
                 <span className="ml-2">マイページ</span>
               </Button>
               <Button
@@ -81,7 +81,7 @@ export function Header({
                 className="text-muted-foreground"
                 onClick={() => setNotificationsOpen(true)}
               >
-                <Icons.Bell className="w-4 h-4" />
+                <Icon name="bell" className="w-4 h-4" />
               </Button>
               <Button
                 variant="primary"
@@ -89,7 +89,7 @@ export function Header({
                 className="text-muted-foreground"
                 onClick={() => setSettingsOpen(true)}
               >
-                <Icons.Settings className="w-4 h-4" />
+                <Icon name="settings" className="w-4 h-4" />
               </Button>
             </div>
           </div>

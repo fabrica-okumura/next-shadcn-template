@@ -1,5 +1,6 @@
 "use client"
 
+import { Icon } from "@/components/ui/icon"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -16,7 +17,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Icons } from "@/components/ui/icon"
 import Image from 'next/image'
 
 interface VehicleDetailNormalProps {
@@ -197,29 +197,29 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
       <div className="flex items-center justify-between mb-6 mt-6">
         <div className="flex items-center gap-2">
           <Button variant="primary" size="sm" onClick={onBack} className="bg-transparent">
-            <Icons.ArrowLeft className="w-4 h-4 mr-2" />
+            <Icon name="arrow-left" className="w-4 h-4 mr-2" />
             一覧へ戻る
           </Button>
           {onPrevious && (
             <Button variant="primary" size="sm" onClick={onPrevious} className="bg-transparent">
-              <Icons.ChevronLeft className="w-4 h-4 mr-2" />
+              <Icon name="chevron-left" className="w-4 h-4 mr-2" />
               前の車両
             </Button>
           )}
           {onNext && (
             <Button variant="primary" size="sm" onClick={onNext} className="bg-transparent">
               次の車両
-              <Icons.ChevronRight className="w-4 h-4 ml-2" />
+              <Icon name="chevron-right" className="w-4 h-4 ml-2" />
             </Button>
           )}
         </div>
         <div className="flex items-center gap-2">
           <Button variant="primary" size="sm" onClick={() => setIsFavorite(!isFavorite)} className="bg-transparent">
-            <Icons.Heart className={`w-4 h-4 mr-2 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
+            <Icon name="heart" className={`w-4 h-4 mr-2 ${isFavorite ? "fill-red-500 text-red-500" : ""}`} />
             お気に入り
           </Button>
           <Button variant="primary" size="sm" className="bg-transparent">
-            <Icons.Printe className="w-4 h-4 mr-2" />
+            <Icon name="printe" className="w-4 h-4 mr-2" />
             印刷
           </Button>
         </div>
@@ -230,31 +230,31 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
         <div className="flex items-center justify-between text-sm">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <Icons.Calendar className="w-4 h-4 text-muted-foreground" />
+              <Icon name="calendar" className="w-4 h-4 text-muted-foreground" />
               <span className="font-semibold">{vehicle.year}年式</span>
             </div>
             <div className="flex items-center gap-2">
-              <Icons.Gauge className="w-4 h-4 text-muted-foreground" />
+              <Icon name="gauge" className="w-4 h-4 text-muted-foreground" />
               <span className="font-semibold">{vehicle.mileage.toLocaleString()}km</span>
             </div>
             <div className="flex items-center gap-2">
-              <Icons.FileText className="w-4 h-4 text-muted-foreground" />
+              <Icon name="file-text" className="w-4 h-4 text-muted-foreground" />
               <span className="font-semibold">
                 {vehicle.inspection} ({vehicle.inspectionMonthsLeft}ヶ月)
               </span>
             </div>
             <div className="flex items-center gap-2">
               {vehicle.accidentHistory === "無" ? (
-                <Icons.CheckCircle className="w-4 h-4 text-green-600" />
+                <Icon name="check-circle" className="w-4 h-4 text-green-600" />
               ) : vehicle.accidentHistory === "有" ? (
-                <Icons.XCircle className="w-4 h-4 text-red-600" />
+                <Icon name="x-circle" className="w-4 h-4 text-red-600" />
               ) : (
-                <Icons.Question className="w-4 h-4 text-yellow-600" />
+                <Icon name="question" className="w-4 h-4 text-yellow-600" />
               )}
               <span className="font-semibold">事故歴: {vehicle.accidentHistory}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Icons.Wrench className="w-4 h-4 text-muted-foreground" />
+              <Icon name="wrench" className="w-4 h-4 text-muted-foreground" />
               <span className="font-semibold">
                 傷・修復: {vehicle.damageCount}件 ({vehicle.damageSeverity})
               </span>
@@ -387,7 +387,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               {vehicle.riskWarnings.length > 0 && (
                 <div className="p-4 bg-red-50 dark:bg-red-900/10 border border-red-200 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
-                    <Icons.AlertTriangle className="w-5 h-5 text-red-600" />
+                    <Icon name="alert-triangle" className="w-5 h-5 text-red-600" />
                     <h3 className="font-semibold text-red-600">リスク注意</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
@@ -408,11 +408,11 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               <div className="flex items-center justify-between mb-2">
                 <h3 className="font-semibold flex items-center gap-2">
                   {vehicle.accidentHistory === "無" ? (
-                    <Icons.CheckCircle className="w-5 h-5 text-green-600" />
+                    <Icon name="check-circle" className="w-5 h-5 text-green-600" />
                   ) : vehicle.accidentHistory === "有" ? (
-                    <Icons.XCircle className="w-5 h-5 text-red-600" />
+                    <Icon name="x-circle" className="w-5 h-5 text-red-600" />
                   ) : (
-                    <Icons.HelpCircle className="w-5 h-5 text-yellow-600" />
+                    <Icon name="help-circle" className="w-5 h-5 text-yellow-600" />
                   )}
                   事故・修復歴: {vehicle.accidentHistory}
                 </h3>
@@ -431,7 +431,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
             <div className="space-y-4">
               <div>
                 <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                  <Icons.Shield className="w-4 h-4" />
+                  <Icon name="shield" className="w-4 h-4" />
                   安全装備
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -444,7 +444,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               </div>
               <div>
                 <h3 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                  <Icons.Sparkles className="w-4 h-4" />
+                  <Icon name="sparkles" className="w-4 h-4" />
                   快適装備
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -497,12 +497,12 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               >
                 {showAllEquipment ? (
                   <>
-                    <Icons.ChevronUp className="w-4 h-4 mr-2" />
+                    <Icon name="chevron-up" className="w-4 h-4 mr-2" />
                     装備を閉じる
                   </>
                 ) : (
                   <>
-                    <Icons.ChevronDown className="w-4 h-4 mr-2" />
+                    <Icon name="chevron-down" className="w-4 h-4 mr-2" />
                     全装備を表示
                   </>
                 )}
@@ -516,7 +516,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Icons.TrendingUp className="w-4 h-4" />
+                  <Icon name="trending-up" className="w-4 h-4" />
                   相場・利益分析
                 </h4>
                 <div className="space-y-2">
@@ -552,7 +552,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
 
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Icons.Clock className="w-4 h-4" />
+                  <Icon name="clock" className="w-4 h-4" />
                   回転・適合度
                 </h4>
                 <div className="space-y-2">
@@ -577,7 +577,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
 
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Icons.Package className="w-4 h-4" />
+                  <Icon name="package" className="w-4 h-4" />
                   出品者信用
                 </h4>
                 <div className="space-y-2">
@@ -602,7 +602,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
 
               <div className="p-4 border rounded-lg">
                 <h4 className="text-sm font-semibold mb-3 flex items-center gap-2">
-                  <Icons.Truck className="w-4 h-4" />
+                  <Icon name="truck" className="w-4 h-4" />
                   物流・資金
                 </h4>
                 <div className="space-y-2">
@@ -682,7 +682,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                   className="w-full mt-2 bg-transparent"
                   onClick={() => setShowInspectionModal(true)}
                 >
-                  <Icons.Eye className="w-4 h-4 mr-2" />
+                  <Icon name="eye" className="w-4 h-4 mr-2" />
                   原寸で開く
                 </Button>
               </div>
@@ -693,7 +693,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                   onClick={() => setShowDetailedInfo(true)}
                   className="w-full bg-transparent"
                 >
-                  <Icons.ChevronDown className="w-4 h-4 mr-2" />
+                  <Icon name="chevron-down" className="w-4 h-4 mr-2" />
                   セールスポイント・特記事項を表示
                 </Button>
               )}
@@ -710,7 +710,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                     onClick={() => setShowDetailedInfo(false)}
                     className="w-full bg-transparent"
                   >
-                    <Icons.ChevronUp className="w-4 h-4 mr-2" />
+                    <Icon name="chevron-up" className="w-4 h-4 mr-2" />
                     閉じる
                   </Button>
                 </>
@@ -772,12 +772,12 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
         >
           {showAdditionalInfo ? (
             <>
-              <Icons.ChevronUp className="w-5 h-5 mr-2" />
+              <Icon name="chevron-up" className="w-5 h-5 mr-2" />
               詳細情報を閉じる（主要スペック・原価概算）
             </>
           ) : (
             <>
-              <Icons.ChevronDown className="w-5 h-5 mr-2" />
+              <Icon name="chevron-down" className="w-5 h-5 mr-2" />
               詳細情報を表示（主要スペック・原価概算）
             </>
           )}
@@ -898,7 +898,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
                 </div>
                 <div className="p-3 bg-blue-50 dark:bg-blue-900/10 rounded text-sm">
                   <div className="flex items-center gap-2 mb-1">
-                    <Icons.Truck className="w-4 h-4" />
+                    <Icon name="truck" className="w-4 h-4" />
                     <span className="font-semibold">陸送概算</span>
                   </div>
                   <p className="text-muted-foreground">
@@ -919,7 +919,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
             <div className="flex-1">
               <h3 className="font-semibold mb-2">申込・交渉</h3>
               <div className="flex items-center gap-2 text-sm">
-                <Icons.Phone className="w-4 h-4" />
+                <Icon name="phone" className="w-4 h-4" />
                 <span className="font-semibold">電話申込: 0120-XXX-XXX</span>
                 <span className="text-xs text-muted-foreground">（平日 9:00-18:00）</span>
               </div>
@@ -930,7 +930,7 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
               </Button>
               <Button>商談申込み・在庫確認</Button>
               <Button variant="primary" size="sm" className="bg-transparent">
-                <Icons.FileText className="w-4 h-4 mr-2" />
+                <Icon name="file-text" className="w-4 h-4 mr-2" />
                 規約
               </Button>
             </div>
@@ -939,11 +939,11 @@ export function VehicleDetailNormal({ vehicleId, onBack, onPrevious, onNext }: V
             <h4 className="text-sm font-semibold mb-3">通知設定</h4>
             <div className="flex items-center gap-2">
               <Button variant="primary" size="sm" className="bg-transparent">
-                <Icons.Bell className="w-4 h-4 mr-2" />
+                <Icon name="bell" className="w-4 h-4 mr-2" />
                 この車の更新を通知
               </Button>
               <Button variant="primary" size="sm" className="bg-transparent" onClick={handleOpenNotificationModal}>
-                <Icons.Bell className="w-4 h-4 mr-2" />
+                <Icon name="bell" className="w-4 h-4 mr-2" />
                 この条件の新着を通知
               </Button>
             </div>

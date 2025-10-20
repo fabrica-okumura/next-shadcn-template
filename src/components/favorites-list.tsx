@@ -1,7 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
-
+import { Icon } from "@/components/ui/icon"
 import { SectionHeader } from "@/components/shared/section-header"
 import { FavoriteToggleButton } from "@/components/shared/favorite-toggle-button"
 import { VehicleCardShell } from "@/components/shared/vehicle-card-shell"
@@ -200,7 +199,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Icons.StarOutline className="h-6 w-6 text-primary" />}
+        icon={<Icon name="star-outline" className="h-6 w-6 text-primary" />}
         title="お気に入り車両一覧"
         action={
           <div className="flex items-center gap-4">
@@ -250,12 +249,12 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                   <div className="flex flex-wrap justify-between gap-4">
                     <div className="grid grid-cols-2 gap-3 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1.5">
-                        <Icons.Settings className="h-4 w-4" />
+                        <Icon name="settings" className="h-4 w-4" />
                         <span className="font-medium text-foreground">型式:</span>
                         <span>{vehicle.type}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Icons.Graph className="h-4 w-4" />
+                        <Icon name="graph" className="h-4 w-4" />
                         <span className="font-medium text-foreground">排気量:</span>
                         <span>{vehicle.displacement}</span>
                       </div>
@@ -264,12 +263,12 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                         <span>{vehicle.mileage}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Icons.Calendar className="h-4 w-4" />
+                        <Icon name="calendar" className="h-4 w-4" />
                         <span className="font-medium text-foreground">車検:</span>
                         <span>{vehicle.inspection}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Icons.Settings className="h-4 w-4" />
+                        <Icon name="settings" className="h-4 w-4" />
                         <span className="font-medium text-foreground">色:</span>
                         <span>{vehicle.color}</span>
                       </div>
@@ -303,12 +302,12 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                 <div className="flex flex-wrap items-center justify-between gap-4 border-b pb-4">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
-                      <Icons.Car className="h-4 w-4" />
+                      <Icon name="car" className="h-4 w-4" />
                       <span className="font-medium text-foreground">所在地:</span>
                       <span>{vehicle.location}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Icons.StarOutline className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                      <Icon name="star-outline" className="h-4 w-4 text-yellow-500 fill-yellow-500" />
                       <span className="font-medium">{vehicle.rating}</span>
                     </div>
                   </div>
@@ -319,7 +318,7 @@ export function FavoritesList({ negotiationMode, onVehicleClick }: FavoritesList
                       className="h-10 min-w-[120px]"
                       onClick={() => onVehicleClick?.(vehicle.listingNumber)}
                     >
-                      <Icons.Eye className="mr-1 h-4 w-4" />
+                      <Icon name="eye" className="mr-1 h-4 w-4" />
                       詳細を見る
                     </Button>
                     <Button size="sm" className="h-10 min-w-[120px] bg-primary hover:bg-primary/90">

@@ -1,6 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -273,9 +273,9 @@ export function VehicleSearchResults({
 
   const SortIcon = ({ field }: { field: SortField }) => {
     if (sortField !== field) {
-      return <Icons.ArrowUp className="w-3 h-3 ml-1" />
+      return <Icon name="arrow-up" className="w-3 h-3 ml-1" />
     }
-    return sortDirection === "asc" ? <Icons.ArrowUp className="w-3 h-3 ml-1" /> : <Icons.ArrowDown className="w-3 h-3 ml-1" />
+    return sortDirection === "asc" ? <Icon name="arrow-up" className="w-3 h-3 ml-1" /> : <Icon name="arrow-down" className="w-3 h-3 ml-1" />
   }
 
   return (
@@ -297,7 +297,7 @@ export function VehicleSearchResults({
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("card")}
               >
-                <Icons.DotsVertical className="w-4 h-4" />
+                <Icon name="dots-vertical" className="w-4 h-4" />
               </Button>
               <Button
                 variant="primary"
@@ -305,7 +305,7 @@ export function VehicleSearchResults({
                 className="h-7 w-7 p-0"
                 onClick={() => setViewMode("table")}
               >
-                <Icons.List className="w-4 h-4" />
+                <Icon name="list" className="w-4 h-4" />
               </Button>
             </div>
           )}
@@ -319,7 +319,7 @@ export function VehicleSearchResults({
         <Card className="p-12">
           <div className="flex flex-col items-center justify-center text-center space-y-6">
             <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center">
-              <Icons.Search className="w-12 h-12 text-muted-foreground" />
+              <Icon name="search" className="w-12 h-12 text-muted-foreground" />
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-semibold">検索条件に一致する車両が見つかりませんでした</h3>
@@ -330,7 +330,7 @@ export function VehicleSearchResults({
             </div>
             <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
               <Button size="md" className="flex-1 gap-2" onClick={handleSaveCondition}>
-                <Icons.StarOutline className="w-4 h-4" />
+                <Icon name="star-outline" className="w-4 h-4" />
                 検索条件を保存して通知を受け取る
               </Button>
               <Button
@@ -377,7 +377,7 @@ export function VehicleSearchResults({
               <thead className="bg-muted">
                 <tr className="border-b border-border">
                   <th className="px-4 py-3 text-left text-sm font-semibold sticky left-0 bg-muted z-20">
-                    <Icons.StarOutline
+                    <Icon name="star-outline"
                       className={`w-5 h-5 cursor-pointer transition-colors ${
                         selectedVehicles.size === vehicles.length
                           ? "fill-red-400 text-red-400"
@@ -463,7 +463,7 @@ export function VehicleSearchResults({
                     onClick={() => onVehicleClick(vehicle.listingNumber)} // Added click handler to navigate to detail
                   >
                     <td className="px-4 py-3 sticky left-0 bg-inherit z-10">
-                      <Icons.StarOutline
+                      <Icon name="star-outline"
                         className={`w-5 h-5 cursor-pointer transition-colors ${
                           selectedVehicles.has(vehicle.id)
                             ? "fill-red-400 text-red-400"
@@ -538,7 +538,7 @@ export function VehicleSearchResults({
               disabled={currentPage === 1}
               className="h-8 w-8 p-0"
             >
-              <Icons.ArrowLeft className="h-4 w-4" />
+              <Icon name="arrow-left" className="h-4 w-4" />
             </Button>
             <Button
               variant="primary"
@@ -547,7 +547,7 @@ export function VehicleSearchResults({
               disabled={currentPage === totalPages}
               className="h-8 w-8 p-0"
             >
-              <Icons.ArrowRight className="h-4 w-4" />
+              <Icon name="arrow-right" className="h-4 w-4" />
             </Button>
           </div>
         </div>

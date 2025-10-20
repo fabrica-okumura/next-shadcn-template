@@ -1,6 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -106,7 +106,7 @@ export function ConditionsListPage({ onConditionClick }: ConditionsListPageProps
           <p className="text-sm text-muted-foreground mt-1">全{filteredConditions.length}件の検索条件</p>
         </div>
         <div className="relative w-80">
-          <Icons.Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <Input
             placeholder="条件タイトルや内容で検索..."
             value={searchQuery}
@@ -118,7 +118,7 @@ export function ConditionsListPage({ onConditionClick }: ConditionsListPageProps
 
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-          <Icons.Search className="w-5 h-5 text-foreground" />
+          <Icon name="search" className="w-5 h-5 text-foreground" />
           <h2 className="text-lg font-semibold">検索条件</h2>
           <Badge variant="default" className="bg-muted text-foreground border border-border">
             {filteredConditions.length}件
@@ -160,12 +160,12 @@ export function ConditionsListPage({ onConditionClick }: ConditionsListPageProps
                 </div>
                 <div className="flex items-center gap-4 flex-shrink-0">
                   <div className="flex items-center gap-2">
-                    <Icons.Eye className="w-4 h-4 text-muted-foreground" />
+                    <Icon name="eye" className="w-4 h-4 text-muted-foreground" />
                     <span className="font-bold text-lg">{condition.hitCount}台</span>
                   </div>
                   {condition.newCount > 0 && (
                     <div className="flex items-center gap-1">
-                      <Icons.Plus className="w-4 h-4 text-green-600" />
+                      <Icon name="plus" className="w-4 h-4 text-green-600" />
                       <span className="text-green-600 text-lg font-bold">{condition.newCount}</span>
                     </div>
                   )}

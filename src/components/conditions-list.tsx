@@ -1,6 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -102,7 +102,7 @@ export function ConditionsList({ onViewList, onConditionClick }: ConditionsListP
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold">検索履歴保存リスト</h2>
         <Button variant="primary" size="sm" onClick={onViewList} className="min-w-[120px] h-10 bg-transparent">
-          <Icons.List className="w-4 h-4 mr-2" />
+          <Icon name="list" className="w-4 h-4 mr-2" />
           詳しく見る
         </Button>
       </div>
@@ -116,17 +116,17 @@ export function ConditionsList({ onViewList, onConditionClick }: ConditionsListP
           >
             <div className="flex items-start justify-between mb-2">
               <div className="flex items-center space-x-2 min-w-0">
-                <Icons.Search className="w-4 h-4 text-foreground flex-shrink-0" />
+                <Icon name="search" className="w-4 h-4 text-foreground flex-shrink-0" />
                 <span className="font-medium text-sm truncate">{condition.title}</span>
               </div>
               <div className="flex items-center space-x-2 flex-shrink-0">
                 <div className="flex items-center space-x-1">
-                  <Icons.Eye className="w-3 h-3 text-muted-foreground" />
+                  <Icon name="eye" className="w-3 h-3 text-muted-foreground" />
                   <span className="font-bold text-base">{condition.hitCount}台</span>
                 </div>
                 {condition.newCount > 0 && (
                   <div className="flex items-center space-x-1 text-base">
-                    <Icons.Plus className="w-3 h-3 text-green-600" />
+                    <Icon name="plus" className="w-3 h-3 text-green-600" />
                     <span className="text-green-600 text-base font-bold">{condition.newCount}</span>
                   </div>
                 )}

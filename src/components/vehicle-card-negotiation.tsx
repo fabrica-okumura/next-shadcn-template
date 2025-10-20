@@ -1,6 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -234,7 +234,7 @@ export function VehicleCardNegotiation({
                   onFavoriteToggle?.()
                 }}
               >
-                <Icons.StarOutline className={`w-3.5 h-3.5 mr-1.5 ${vehicle.favorite ? "fill-red-500 text-red-500" : ""}`} />
+                <Icon name="star-outline" className={`w-3.5 h-3.5 mr-1.5 ${vehicle.favorite ? "fill-red-500 text-red-500" : ""}`} />
                 お気に入り追加
               </Button>
               <Button

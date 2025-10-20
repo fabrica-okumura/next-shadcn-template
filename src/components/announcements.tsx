@@ -1,4 +1,4 @@
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 import { Badge } from "@/components/ui/badge"
 
 export function Announcements() {
@@ -33,7 +33,7 @@ export function Announcements() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold flex items-center">
-          <Icons.StarOutline className="w-5 h-5 mr-2 text-primary" />
+          <Icon name="star-outline" className="w-5 h-5 mr-2 text-primary" />
           運営からのお知らせ
         </h2>
       </div>
@@ -46,9 +46,9 @@ export function Announcements() {
           >
             <div className="flex items-start justify-between mb-2">
               <div className="flex items-center space-x-2">
-                {announcement.type === "system" && <Icons.Error className="w-4 h-4 text-primary" />}
-                {announcement.type === "feature" && <Icons.StarOutline className="w-4 h-4 text-primary" />}
-                {announcement.type === "event" && <Icons.Calendar className="w-4 h-4 text-primary" />}
+                {announcement.type === "system" && <Icon name="error" className="w-4 h-4 text-primary" />}
+                {announcement.type === "feature" && <Icon name="star-outline" className="w-4 h-4 text-primary" />}
+                {announcement.type === "event" && <Icon name="calendar" className="w-4 h-4 text-primary" />}
                 <h3 className="font-medium">{announcement.title}</h3>
                 {announcement.priority === "high" && (
                   <Badge variant="danger" className="text-xs">

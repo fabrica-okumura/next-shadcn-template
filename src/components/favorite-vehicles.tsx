@@ -1,7 +1,6 @@
 "use client"
 
-import { Icons } from "@/components/ui/icon"
-
+import { Icon } from "@/components/ui/icon"
 import { SectionHeader } from "@/components/shared/section-header"
 import { VehicleCard } from "@/components/shared/vehicle-card"
 import { Button } from "@/components/ui/button"
@@ -134,11 +133,11 @@ export function FavoriteVehicles({ negotiationMode, onShowList, onVehicleClick }
   return (
     <div className="space-y-4">
       <SectionHeader
-        icon={<Icons.StarOutline className="h-5 w-5 text-primary" />}
+        icon={<Icon name="star-outline" className="h-5 w-5 text-primary" />}
         title="お気に入り車両"
         action={
           <Button variant="primary" size="sm" className="h-10 min-w-[120px] bg-transparent" onClick={onShowList}>
-            <Icons.List className="mr-2 h-4 w-4" />
+            <Icon name="list" className="mr-2 h-4 w-4" />
             詳しく見る
           </Button>
         }
@@ -210,7 +209,7 @@ export function FavoriteVehicles({ negotiationMode, onShowList, onVehicleClick }
                   className="flex-1 h-10 min-w-[120px] border-[#b2b6b8] hover:bg-white"
                   onClick={() => onVehicleClick?.(vehicle.id.toString())}
                 >
-                  <Icons.Eye className="mr-1 h-4 w-4" />
+                  <Icon name="eye" className="mr-1 h-4 w-4" />
                   詳細を見る
                 </Button>
                 {!negotiationMode && (

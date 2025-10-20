@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, MouseEventHandler } from "react"
 import { useState } from "react"
 
-import { Icons } from "@/components/ui/icon"
+import { Icon } from "@/components/ui/icon"
 
 import { cn } from "@/lib/utils"
 
@@ -43,7 +43,8 @@ export function FavoriteToggleButton({ active, defaultActive = false, onValueCha
       onClick={handleClick}
       {...props}
     >
-      <Icons.StarOutline
+      <Icon
+        name="star-outline"
         className={cn(
           "size-4",
           currentActive

@@ -1,10 +1,10 @@
 "use client"
 
+import { Icon } from "@/components/ui/icon"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { Icons } from "@/components/ui/icon"
 import { useState } from "react"
 
 interface SearchWindowProps {
@@ -176,9 +176,9 @@ export function SearchWindow({ onSearch }: SearchWindowProps) {
                     size="sm"
                     className="flex items-center gap-2 bg-transparent min-w-[120px] h-10"
                   >
-                    <Icons.Plus className="w-4 h-4" />
+                    <Icon name="plus" className="w-4 h-4" />
                     詳細条件
-                    <Icons.ArrowDown className={`w-4 h-4 transition-transform ${isDetailedOpen ? "rotate-180" : ""}`} />
+                    <Icon name="arrow-down" className={`w-4 h-4 transition-transform ${isDetailedOpen ? "rotate-180" : ""}`} />
                   </Button>
                 </CollapsibleTrigger>
               </div>

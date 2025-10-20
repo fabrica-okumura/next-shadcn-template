@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "plop": "plop",
-    "create-story": "node scripts/create-story.mjs"
+    "create-story": "node scripts/create-story.mjs",
+    "generate:icons": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

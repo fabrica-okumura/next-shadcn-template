@@ -1,12 +1,12 @@
 "use client"
 
+import { Icon } from "@/components/ui/icon"
 import type React from "react"
 
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FilterChips } from "@/components/shared/filter-chips"
 import { SearchInput } from "@/components/shared/search-input"
-import { Icons } from "@/components/ui/icon"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -188,15 +188,15 @@ export function ProcurementList() {
   const getStatusIcon = (status: ProcurementStatus) => {
     switch (status) {
       case "連絡待ち":
-        return <Icons.Clock className="w-4 h-4" />
+        return <Icon name="clock" className="w-4 h-4" />
       case "審査中":
-        return <Icons.MultipleDocuments className="w-4 h-4" />
+        return <Icon name="multiple-documents" className="w-4 h-4" />
       case "落札手続き":
-        return <Icons.Good className="w-4 h-4" />
+        return <Icon name="good" className="w-4 h-4" />
       case "陸送手配／輸送中":
-        return <Icons.Car className="w-4 h-4" />
+        return <Icon name="car" className="w-4 h-4" />
       case "完了":
-        return <Icons.Good className="w-4 h-4" />
+        return <Icon name="good" className="w-4 h-4" />
     }
   }
 
@@ -252,26 +252,26 @@ export function ProcurementList() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-4">
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Icons.Garage className="w-4 h-4" />
+                    <Icon name="garage" className="w-4 h-4" />
                     <span>{vehicle.auctionHouse}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Icons.Calendar className="w-4 h-4" />
+                    <Icon name="calendar" className="w-4 h-4" />
                     <span>オークション日: {vehicle.auctionDate}</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
-                    <Icons.Car className="w-4 h-4" />
+                    <Icon name="car" className="w-4 h-4" />
                     <span>{vehicle.location}</span>
                   </div>
                   {vehicle.estimatedArrival && (
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Icons.Car className="w-4 h-4" />
+                      <Icon name="car" className="w-4 h-4" />
                       <span>到着予定: {vehicle.estimatedArrival}</span>
                     </div>
                   )}
                   {vehicle.completedDate && (
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Icons.CheckmarkCircle className="w-4 h-4" />
+                      <Icon name="checkmark-circle" className="w-4 h-4" />
                       <span>完了日: {vehicle.completedDate}</span>
                     </div>
                   )}

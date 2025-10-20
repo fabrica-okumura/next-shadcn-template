@@ -1,10 +1,10 @@
 "use client"
 
+import { Icon } from "@/components/ui/icon"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FilterChips } from "@/components/shared/filter-chips"
 import { SearchInput } from "@/components/shared/search-input"
-import { Icons } from "@/components/ui/icon"
 import { useState } from "react"
 
 interface Customer {
@@ -196,19 +196,19 @@ export function CustomersList({ onNegotiationClick }: { onNegotiationClick?: (ne
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <Icons.Garage className="w-4 h-4" />
+                    <Icon name="garage" className="w-4 h-4" />
                     <span>{customer.company}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Icons.IconMail className="w-4 h-4" />
+                    <Icon name="icon-mail" className="w-4 h-4" />
                     <span>{customer.email}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Icons.IconMail className="w-4 h-4" />
+                    <Icon name="icon-mail" className="w-4 h-4" />
                     <span>{customer.phone}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Icons.Calendar className="w-4 h-4" />
+                    <Icon name="calendar" className="w-4 h-4" />
                     <span>最終連絡: {customer.lastContact}</span>
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export function CustomersList({ onNegotiationClick }: { onNegotiationClick?: (ne
                 {customer.negotiations.length > 0 && (
                   <div className="mt-4 pt-4 border-t space-y-3">
                     <div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-                      <Icons.MultipleDocuments className="w-4 h-4" />
+                      <Icon name="multiple-documents" className="w-4 h-4" />
                       <span>商談中の検索条件 ({customer.negotiations.length}件)</span>
                     </div>
                     <div className="space-y-2">
