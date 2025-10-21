@@ -11,7 +11,8 @@
     "build-storybook": "storybook build",
     "plop": "plop",
     "create-story": "node scripts/create-story.mjs",
-    "generate:icons": "node scripts/generate-icons.mjs"
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "watch:icons": "node --watch --watch-path=public/icons scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

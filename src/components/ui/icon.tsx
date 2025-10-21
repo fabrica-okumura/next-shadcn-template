@@ -1,3 +1,5 @@
+'use client'
+
 import React, { forwardRef, useId, useMemo } from 'react'
 
 import { iconDefinitions, IconName } from './icon-definitions'

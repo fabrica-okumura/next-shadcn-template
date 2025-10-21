@@ -24,6 +24,8 @@
 ### TypeScript
 - strict モードを前提に型安全を維持する
 - `any` の使用は避け、適切な型定義を行う
+- オブジェクトの形状を定義する際はまず `interface` を使用し、`interface` で表現できない型（Union 型など）のみ `type` を使用する
+- React Hooks やブラウザ API を利用するコンポーネントは必ずファイル先頭に `'use client'` を記述し、付け忘れによるビルドエラーを防ぐ
 
 ### CSS
 - Tailwind ユーティリティを基本とする
